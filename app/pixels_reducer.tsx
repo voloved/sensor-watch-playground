@@ -29,6 +29,19 @@ function clearAllIndicators(on : Set<string>) {
     }
 }
 
+function setSingleCom(com: number): Set<string> {
+    const on = new Set<string>()
+
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 27; j++) {
+            if (i === com) {
+                on.add(`${i},${j}`)
+            }
+        }
+    }
+    return on
+}
+
 function currentTimeAsDispString(): string {
     const date = new Date()
     const pad = (num: number) => num < 10 ? ' ' + num : num
@@ -65,7 +78,7 @@ const PixelsContext = createContext<[pixelState, Dispatch<PixelsAction>]>([
 type PixelsAction = { type: "set", pixel: string, on: boolean }
     | { type: "disp_str", disp: string }
     | { type: "hover", pixel: string | null }
-    | { type: "preset", preset: "positions" | "time" | "all_on" | "all_off" }
+    | { type: "preset", preset: "positions" | "time" | "all_on" | "all_off" | "set_com", com: number }
 
 function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
     console.log("reducing action", action)
@@ -139,6 +152,12 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                         ...pixels,
                         on,
                         dispStr,
+                    }
+                }
+                case "set_com": {
+                    return {
+                        ...pixels,
+                        on: setSingleCom(action.com),
                     }
                 }
             }

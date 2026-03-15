@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <body className="flex justify-center">
-      <main className="font-mono flex max-w-screen-md min-h-screen flex-col p-4 gap-8 md:p-12">
+      <main className="font-mono flex max-w-screen-md min-h-screen flex-col p-4 gap-2 md:p-12">
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
 
           <div className="flex flex-col tracking-[.25em]">
@@ -44,21 +44,32 @@ function Home() {
           </div>
         </div>
 
+        <div className="flex flex-col md:flex-row gap-1">
+          <div className="flex flex-row w-full gap-1">
+            <ShortcutButton onClick={() => dispatch({ type: "preset", preset: "set_com", com: 0 })} >com 0</ShortcutButton>
+            <ShortcutButton onClick={() => dispatch({ type: "preset", preset: "set_com", com: 1 })} >com 1</ShortcutButton>
+          </div>
+          <div className="flex flex-row w-full gap-1">
+            <ShortcutButton onClick={() => dispatch({ type: "preset", preset: "set_com", com: 2 })} >com 2</ShortcutButton>
+            <ShortcutButton onClick={() => dispatch({ type: "preset", preset: "set_com", com: 3 })} >com 3</ShortcutButton>
+          </div>
+        </div>
+
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-row w-full gap-1">
             <InputIndicator pixel={indicatorPixelDict["Signal"]} label="sig." />
-            <InputIndicator pixel={indicatorPixelDict["Bell"]} label="bell" />
+            <InputIndicator pixel={indicatorPixelDict["Bell"]} label="Bell" />
             <InputIndicator pixel={indicatorPixelDict["PM"]} label="PM" />
             <InputIndicator pixel={indicatorPixelDict["24H"]} label="24H" />
             <InputIndicator pixel={indicatorPixelDict["Split"]} label="Splt" />
             <InputIndicator pixel={indicatorPixelDict["Auto"]} label="Auto" />
-            <InputIndicator pixel={indicatorPixelDict["Dash"]} label="Dash" />
-            <InputIndicator pixel={indicatorPixelDict["Dot_Up"]} label="DtUp" />
-            <InputIndicator pixel={indicatorPixelDict["Dot_Dn"]} label="DtDn" />
             <InputIndicator pixel={indicatorPixelDict["Sun"]} label="Sun" />
-            <InputIndicator pixel={indicatorPixelDict["Quote"]} label="Qt" />
-            <InputIndicator pixel={indicatorPixelDict["Dbl_Quote"]} label="DblQ" />
+            <InputIndicator pixel={indicatorPixelDict["Dash"]} label="-" />
+            <InputIndicator pixel={indicatorPixelDict["Dot_Up"]} label="˙" />
+            <InputIndicator pixel={indicatorPixelDict["Dot_Dn"]} label="." />
+            <InputIndicator pixel={indicatorPixelDict["Quote"]} label="'" />
             <InputIndicator pixel={indicatorPixelDict["Colon"]} label=":" />
+            <InputIndicator pixel={indicatorPixelDict["Dbl_Quote"]} label="''" />
           </div>
         </div>
 
@@ -184,6 +195,33 @@ type InputIndicatorProps = {
 }
 
 function InputIndicator(props: InputIndicatorProps) {
+  const [pixels, dispatch] = usePixels()
+  const checked = pixels.on.has(props.pixel)
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch({ type: "set", pixel: props.pixel, on: event.target.checked })
+  }
+
+  let className = `w-12 h-12 md:w-16 md:h-16 accent-gray-500 shadow border-solid border
+  rounded border-gray-500 flex flex-col justify-between items-center p-2
+  select-none active:bg-gray-300 active:shadow-gray-400 active:shadow-inner`
+
+  if (checked) {
+    className += " bg-gray-300 shadow-gray-400 shadow-inner"
+  } else {
+    className += " shadow-md"
+  }
+
+  return <label className={className}>
+    <input
+      type="checkbox"
+      checked={checked}
+      onChange={handleChange}
+    />
+    <p>{props.label}</p>
+  </label>
+}
+
+function InputCom(props: InputIndicatorProps) {
   const [pixels, dispatch] = usePixels()
   const checked = pixels.on.has(props.pixel)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
