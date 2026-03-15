@@ -99,10 +99,12 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
         case "preset": {
             switch (action.preset) {
                 case "positions": {
-                    const dispStr = "012345678901"
+                    const dispStr = "0123456789ab"
+                    const on = reduceDispString(pixels.on, dispStr)
+                    clearAllIndicators(on)
                     return {
                         ...pixels,
-                        on: reduceDispString(pixels.on, dispStr),
+                        on: on,
                         dispStr,
                     }
                 }

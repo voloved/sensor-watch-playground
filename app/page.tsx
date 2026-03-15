@@ -25,7 +25,7 @@ function Home() {
           <div className="flex flex-col tracking-[.25em]">
             <p
               className="font-mono pl-1"
-            >012345678901</p>
+            >0123456789ab</p>
             <InputDisplayString
               value={pixels.dispStr}
               onChange={(disp) => dispatch({ type: "disp_str", disp })}

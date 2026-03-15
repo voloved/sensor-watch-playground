@@ -6,39 +6,10 @@ should still behave the same.
  */
 
 function watch_display_character(character: string, position: number): string {
-    // special cases for positions 4 and 6
-    if (position == 4 || position == 6) {
-        if (character == '7') character = '&'; // "lowercase" 7
-        else if (character == 'A') character = 'a'; // A needs to be lowercase
-        else if (character == 'o') character = 'O'; // O needs to be uppercase
-        else if (character == 'L') character = '!'; // L needs to be in top half
-        else if (character == 'M' || character == 'm' || character == 'N') character = 'n'; // M and uppercase N need to be lowercase n
-        else if (character == 'c') character = 'C'; // C needs to be uppercase
-        else if (character == 'J') character = 'j'; // same
-        else if (character == 'v' || character == 'V' || character == 'U' || character == 'W' || character == 'w') character = 'u'; // bottom segment duplicated, so show in top half
-    } else {
-        if (character == 'u') character = 'v'; // we can use the bottom segment; move to lower half
-        else if (character == 'j') character = 'J'; // same but just display a normal J
-    }
-    if (position > 1) {
-        if (character == 'T') character = 't'; // uppercase T only works in positions 0 and 1
-    }
-    if (position == 1) {
-        if (character == 'a') character = 'A'; // A needs to be uppercase
-        else if (character == 'o') character = 'O'; // O needs to be uppercase
-        else if (character == 'i') character = 'l'; // I needs to be uppercase (use an l, it looks the same)
-        else if (character == 'n') character = 'N'; // N needs to be uppercase
-        else if (character == 'r') character = 'R'; // R needs to be uppercase
-        else if (character == 'd') character = 'D'; // D needs to be uppercase
-        else if (character == 'v' || character == 'V' || character == 'u') character = 'U'; // side segments shared, make uppercase
-        else if (character == 'b') character = 'B'; // B needs to be uppercase
-        else if (character == 'c') character = 'C'; // C needs to be uppercase
-    } else {
-        if (character == 'R') character = 'r'; // R needs to be lowercase almost everywhere
-    }
-    if (position != 0) {
-        if (character == 'I') character = 'l'; // uppercase I only works in position 0
-    }
+    if (character == 'R' && position > 1 && position < 8) character = 'r'; // We can't display uppercase R in these positions
+    else if (character == 'T' && position > 0) character = 't'; // lowercase t is the only option for these positions
+    else if (character == 'B' && position > 1) character = '8';
+    else if (character == 'I' && position > 0) character = '1';
     return character
 }
 
@@ -286,35 +257,29 @@ function computePixels(character: string, position: number): pixelUpdate {
     let segdata = Character_Set[character.charCodeAt(0) - 0x20];
 
     if (position == 1) watch_clear_pixel(3, 6); // clear funky ninth segment
-    if (position == 0) { // clear funky ninth segment
-        watch_clear_pixel(2, 21);
-        watch_clear_pixel(0, 21);
-    }
-
     for (let i = 0; i < 8; i++) {
         const segmap = segmaps[i]
         const com = segmap.com
 
         if (com === null) {
+            segdata = segdata >> 1;
             continue;
         }
 
         let seg = segmap.seg;
 
-        if (segdata & 1)
+        if (segdata & 1) {
             watch_set_pixel(com, seg);
-        else
+            if (com == 2 && seg == 21) watch_set_pixel(0, 21);
+        } else {
             watch_clear_pixel(com, seg);
+            if (com == 2 && seg == 21) watch_clear_pixel(0, 21);
+        }
 
         segdata = segdata >> 1;
     }
 
-    if (character == 'T' && position == 1) watch_set_pixel(1, 12); // add descender
-    else if (position == 0 && character == '@'){ // add funky ninth segment
-        watch_set_pixel(2, 21);
-        watch_set_pixel(0, 21);
-    }
-    else if (position == 1 && (character == 'B' || character == 'D' || character == '@')) watch_set_pixel(3, 6); // add funky ninth segment
+    if (position == 1 && (character == 'B' || character == 'D' || character == '@')) watch_set_pixel(3, 6); // add funky ninth segment
 
     return upd
 }
