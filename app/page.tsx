@@ -214,9 +214,9 @@ function About() {
   return <div className="text-gray-600 text-justify">
     <h2 className="font-bold">What is this?</h2>
     <p>
-      This web app replicates the LCD display of the Casio F-91W watch.
+      This web app replicates the LCD display of the Casio G-Shock DW5600 watch.
       Its goal is to help with developing new features on the
-      {' '}<Link href="https://www.sensorwatch.net/">Sensor&nbsp;Watch</Link>,
+      {' '}<Link href="https://github.com/voloved/second-movement/tree/jolt">Sensor&nbsp;Watch G-Shock Display</Link>,
       a programmable, ARM-based microcontroller board that replaces the watch&apos;s original board.
     </p>
     <p>
@@ -232,8 +232,7 @@ function About() {
     <h2 className="font-bold mt-4">Links</h2>
     <ul className="list-disc list-inside">
       <li><Link href="https://www.sensorwatch.net/">Sensor Watch home page</Link></li>
-      <li><Link href="https://www.sensorwatch.net/docs/wig/display/">Sensor Watch display guidelines</Link></li>
-      <li><Link href="https://github.com/hchargois/sensor-watch-playground">Source code of this page (GitHub)</Link></li>
+      <li><Link href="https://github.com/voloved/sensor-watch-playground">Source code of this page (GitHub)</Link></li>
     </ul>
   </div>
 }

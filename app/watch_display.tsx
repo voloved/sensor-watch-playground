@@ -285,8 +285,11 @@ function computePixels(character: string, position: number): pixelUpdate {
     let segmaps = Segment_Map[position];
     let segdata = Character_Set[character.charCodeAt(0) - 0x20];
 
-    if (position == 0)
-        watch_clear_pixel(0, 15); // clear funky ninth segment
+    if (position == 1) watch_clear_pixel(3, 6); // clear funky ninth segment
+    if (position == 0) { // clear funky ninth segment
+        watch_clear_pixel(2, 21);
+        watch_clear_pixel(0, 21);
+    }
 
     for (let i = 0; i < 8; i++) {
         const segmap = segmaps[i]
@@ -307,8 +310,11 @@ function computePixels(character: string, position: number): pixelUpdate {
     }
 
     if (character == 'T' && position == 1) watch_set_pixel(1, 12); // add descender
-    else if (position == 0 && (character == 'B' || character == 'D' || character == '@')) watch_set_pixel(0, 15); // add funky ninth segment
-    else if (position == 1 && (character == 'B' || character == 'D' || character == '@')) watch_set_pixel(0, 12); // add funky ninth segment
+    else if (position == 0 && character == '@'){ // add funky ninth segment
+        watch_set_pixel(2, 21);
+        watch_set_pixel(0, 21);
+    }
+    else if (position == 1 && (character == 'B' || character == 'D' || character == '@')) watch_set_pixel(3, 6); // add funky ninth segment
 
     return upd
 }

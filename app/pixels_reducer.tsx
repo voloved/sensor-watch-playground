@@ -17,6 +17,18 @@ export const indicatorPixelDict = {
   "Colon"     : "2,23"
 };
 
+function setAllIndicators(on : Set<string>) {
+    for (const pixel of Object.values(indicatorPixelDict)) {
+        on.add(pixel);
+    }
+}
+
+function clearAllIndicators(on : Set<string>) {
+    for (const pixel of Object.values(indicatorPixelDict)) {
+        on.delete(pixel);
+    }
+}
+
 function currentTimeAsDispString(): string {
     const date = new Date()
     const pad = (num: number) => num < 10 ? ' ' + num : num
@@ -24,12 +36,13 @@ function currentTimeAsDispString(): string {
     const daysOfWeek = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"]
 
     const dayOfWeek = daysOfWeek[date.getDay()]
+    const month = pad(date.getMonth())
     const day = pad(date.getDate())
     const hours = pad(date.getHours())
     const minutes = pad0(date.getMinutes())
     const seconds = pad0(date.getSeconds())
 
-    return `${dayOfWeek}${day}${hours}${minutes}${seconds}`
+    return `${dayOfWeek}${day}${hours}${minutes}${seconds}${month}`
 }
 
 type pixelState = {
@@ -96,10 +109,10 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                 case "time": {
                     const dispStr = currentTimeAsDispString()
                     const on = reduceDispString(pixels.on, dispStr)
+                    clearAllIndicators(on)
                     on.add(indicatorPixelDict["24H"])
                     on.add(indicatorPixelDict["Colon"])
-                    on.delete(indicatorPixelDict["PM"])
-                    on.delete(indicatorPixelDict["Split"])
+                    on.add(indicatorPixelDict["Dash"])
                     return {
                         ...pixels,
                         on,
@@ -109,9 +122,7 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                 case "all_on": {
                     const dispStr = "@@@@@@@@@@@@"
                     const on = reduceDispString(pixels.on, dispStr)
-                    for (const pixel of Object.values(indicatorPixelDict)) {
-                        on.add(pixel)
-                    }
+                    setAllIndicators(on)
                     return {
                         ...pixels,
                         on,
@@ -121,9 +132,7 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                 case "all_off": {
                     const dispStr = ""
                     const on = reduceDispString(pixels.on, dispStr)
-                    for (const pixel of Object.values(indicatorPixelDict)) {
-                        on.delete(pixel)
-                    }
+                    clearAllIndicators(on)
                     return {
                         ...pixels,
                         on,

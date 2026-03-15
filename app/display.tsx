@@ -84,7 +84,7 @@ function Dash() {
 function Dot_Up() {
   return <g id="dot_up" transform="matrix(1.05 0 0 .922 130 -564)">
     <Pixel pixel={indicatorPixelDict["Dot_Up"]}>
-      <rect x="536" y="707" width="19" height="19" rx="9.5"/>
+      <rect x="532" y="707" width="19" height="19" rx="9.5"/>
     </Pixel>
   </g>
 }
