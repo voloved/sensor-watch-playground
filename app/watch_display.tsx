@@ -43,7 +43,7 @@ function watch_display_character(character: string, position: number): string {
 }
 
 const Character_Set = [
-    0b00000000, //  
+    0b00000000, // [space]
     0b01100000, // ! (L in the top half for positions 4 and 6)
     0b00100010, // "
     0b01100011, // # (degree symbol, hash mark doesn't fit)
@@ -66,11 +66,11 @@ const Character_Set = [
     0b01100110, // 4
     0b01101101, // 5
     0b01111101, // 6
-    0b00000111, // 7
+    0b00100111, // 7
     0b01111111, // 8
     0b01101111, // 9
-    0b00000000, // : (unused)
-    0b00000000, // ; (unused)
+    0b01011101, // ö (: is unused, so this is taking over)
+    0b00011101, // ü (; is unused, so this is taking over)
     0b01011000, // <
     0b01001000, // =
     0b01001100, // >
@@ -141,16 +141,131 @@ const Character_Set = [
 ]
 
 const Segment_Map = [
-    [0x4e, 0x4f, 0x0e, 0x8e, 0x8f, 0x8d, 0x4d, 0x0d], // Position 0, mode
-    [0x0c, 0x8c, 0x4c, 0x4c, 0x8b, 0x4b, 0x4b, 0x0b], // Position 1, mode (Segments B and C shared, as are segments E and F)
-    [0xc0, 0x49, 0xc0, 0x0a, 0x49, 0x89, 0x09, 0x49], // Position 2, day of month (Segments A, D, G shared; missing segment F)
-    [0xc0, 0x48, 0x08, 0x88, 0x86, 0x87, 0x47, 0x07], // Position 3, day of month
-    [0xc0, 0x53, 0x92, 0x12, 0x52, 0x13, 0x93, 0x52], // Position 4, clock hours (Segments A and D shared)
-    [0xc0, 0x54, 0x51, 0x14, 0x15, 0x55, 0x95, 0x94], // Position 5, clock hours
-    [0xc0, 0x57, 0x96, 0x56, 0x16, 0x17, 0x97, 0x16], // Position 6, clock minutes (Segments A and D shared)
-    [0xc0, 0x41, 0x80, 0x40, 0x00, 0x01, 0x8a, 0x81], // Position 7, clock minutes
-    [0xc0, 0x43, 0x42, 0x02, 0x03, 0x04, 0x83, 0x82], // Position 8, clock seconds
-    [0xc0, 0x45, 0x44, 0x05, 0x06, 0x46, 0x85, 0x84], // Position 9, clock seconds
+    [
+    // Positions 0 and 1 are the Weekday or Mode digits
+        { "com" : 3, "seg" : 18 }, // 0A
+        { "com" : 2, "seg" : 17 }, // 0B
+        { "com" : 0, "seg" : 17 }, // 0C
+        { "com" : 0, "seg" : 18 }, // 0D
+        { "com" : 1, "seg" : 20 }, // 0E
+        { "com" : 2, "seg" : 18 }, // 0F
+        { "com" : 1, "seg" : 6 },  // 0G
+        { "com" : 2, "seg" : 21 }, // 0H
+        { "com" : null, "seg" : null }, // 0I
+    ],
+    [
+        { "com" : 3, "seg" : 9 },  // 1A
+        { "com" : 2, "seg" : 9 },  // 1B
+        { "com" : 1, "seg" : 9 },  // 1C
+        { "com" : 0, "seg" : 10 }, // 1D
+        { "com" : 1, "seg" : 17 }, // 1E
+        { "com" : 2, "seg" : 10 }, // 1F
+        { "com" : 1, "seg" : 10 }, // 1G
+        { "com" : null, "seg" : null }, // 1H
+    ],
+    // Positions 2 and 3 are the Day digits
+    [
+        { "com" : 3, "seg" : 3 },  // 2A
+        { "com" : 3, "seg" : 2 },  // 2B
+        { "com" : 1, "seg" : 2 },  // 2C
+        { "com" : 1, "seg" : 3 },  // 2D
+        { "com" : 2, "seg" : 5 },  // 2E
+        { "com" : 3, "seg" : 5 },  // 2F
+        { "com" : 2, "seg" : 3 },  // 2G
+        { "com" : null, "seg" : null }, // 2H
+    ],
+    [
+        { "com" : 3, "seg" : 0 },  // 3A
+        { "com" : 2, "seg" : 0 },  // 3B
+        { "com" : 1, "seg" : 0 },  // 3C
+        { "com" : 1, "seg" : 1 },  // 3D
+        { "com" : 2, "seg" : 2 },  // 3E
+        { "com" : 3, "seg" : 1 },  // 3F
+        { "com" : 2, "seg" : 1 },  // 3G
+        { "com" : null, "seg" : null }, // 3H
+    ],
+    // Positions 4-9 are the Clock digits
+    [
+        { "com" : 0, "seg" : 19 }, // 4A
+        { "com" : 1, "seg" : 21 }, // 4B
+        { "com" : 3, "seg" : 19 }, // 4C
+        { "com" : 3, "seg" : 20 }, // 4D
+        { "com" : 2, "seg" : 20 }, // 4E
+        { "com" : 1, "seg" : 19 }, // 4F
+        { "com" : 2, "seg" : 19 }, // 4G
+        { "com" : null, "seg" : null }, // 4H
+    ],
+    [
+        { "com" : 1, "seg" : 26 }, // 5A
+        { "com" : 1, "seg" : 23 }, // 5B
+        { "com" : 3, "seg" : 26 }, // 5C
+        { "com" : 3, "seg" : 23 }, // 5D
+        { "com" : 3, "seg" : 21 }, // 5E
+        { "com" : 2, "seg" : 22 }, // 5F
+        { "com" : 2, "seg" : 26 }, // 5G
+        { "com" : null, "seg" : null }, // 5H
+    ],
+    [
+        { "com" : 0, "seg" : 16 }, // 6A
+        { "com" : 1, "seg" : 15 }, // 6B
+        { "com" : 2, "seg" : 15 }, // 6C
+        { "com" : 3, "seg" : 15 }, // 6D
+        { "com" : 3, "seg" : 16 }, // 6E
+        { "com" : 1, "seg" : 16 }, // 6F
+        { "com" : 2, "seg" : 16 }, // 6G
+        { "com" : null, "seg" : null }, // 6H
+    ],
+    [
+        { "com" : 1, "seg" : 13 }, // 7A
+        { "com" : 1, "seg" : 14 }, // 7B
+        { "com" : 3, "seg" : 25 }, // 7C
+        { "com" : 3, "seg" : 13 }, // 7D
+        { "com" : 3, "seg" : 14 }, // 7E
+        { "com" : 2, "seg" : 13 }, // 7F
+        { "com" : 2, "seg" : 14 }, // 7G
+        { "com" : null, "seg" : null }, // 7H
+    ],
+    [
+        { "com" : 0, "seg" : 24 }, // 8A
+        { "com" : 1, "seg" : 24 }, // 8B
+        { "com" : 2, "seg" : 24 }, // 8C
+        { "com" : 3, "seg" : 24 }, // 8D
+        { "com" : 2, "seg" : 25 }, // 8E
+        { "com" : 0, "seg" : 25 }, // 8F
+        { "com" : 1, "seg" : 25 }, // 8G
+        { "com" : null, "seg" : null }, // 8H
+    ],
+    [
+        { "com" : 0, "seg" : 11 }, // 9A
+        { "com" : 1, "seg" : 11 }, // 9B
+        { "com" : 2, "seg" : 11 }, // 9C
+        { "com" : 3, "seg" : 11 }, // 9D
+        { "com" : 3, "seg" : 12 }, // 9E
+        { "com" : 1, "seg" : 12 }, // 9F
+        { "com" : 2, "seg" : 12 }, // 9G
+        { "com" : null, "seg" : null }, // 9H
+    ],
+    // Positions 10 and 11 are the Month digits
+    [
+        { "com" : 2, "seg" : 8 },  // 10A
+        { "com" : 0, "seg" : 7 },  // 10B
+        { "com" : 0, "seg" : 8 },  // 10C
+        { "com" : 0, "seg" : 9 },  // 10D
+        { "com" : 2, "seg" : 7 },  // 10E
+        { "com" : null, "seg" : null }, // 10F
+        { "com" : 1, "seg" : 22 }, // 10G
+        { "com" : null, "seg" : null }, // 10H
+    ],
+    [
+        { "com" : 3, "seg" : 10 }, // 11A
+        { "com" : 3, "seg" : 7 },  // 11B
+        { "com" : 1, "seg" : 4 },  // 11C
+        { "com" : 1, "seg" : 8 },  // 11D
+        { "com" : 1, "seg" : 7 },  // 11E
+        { "com" : 3, "seg" : 8 },  // 11F
+        { "com" : 2, "seg" : 6 },  // 11G
+        { "com" : null, "seg" : null }, // 11H
+    ]
 ]
 
 export type pixels = Set<string> // each pixel is represented as a string "com,seg"
@@ -174,15 +289,14 @@ function computePixels(character: string, position: number): pixelUpdate {
         watch_clear_pixel(0, 15); // clear funky ninth segment
 
     for (let i = 0; i < 8; i++) {
-        const segmap = segmaps[7 - i]
-        const com = segmap >> 6
+        const segmap = segmaps[i]
+        const com = segmap.com
 
-        if (com > 2) {
-            // COM3 means no segment exists; skip it.
-            segdata = segdata >> 1;
+        if (com === null) {
             continue;
         }
-        let seg = segmap & 0x3F;
+
+        let seg = segmap.seg;
 
         if (segdata & 1)
             watch_set_pixel(com, seg);
@@ -202,7 +316,7 @@ function computePixels(character: string, position: number): pixelUpdate {
 export function computeAllPixels(dispStr: string): pixelUpdate {
     const upd = new Map<string, boolean>
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
         const c = dispStr.charAt(i)
         const u = computePixels(c, i)
         u.forEach((value, key) => {
@@ -215,7 +329,7 @@ export function computeAllPixels(dispStr: string): pixelUpdate {
 
 export function computeActualDispString(s: string): string {
     let a = ""
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
         const c = s.charAt(i)
         if (c == "") {
             a += " "

@@ -1,6 +1,22 @@
 import { Dispatch, createContext, useContext, useReducer } from "react"
 import { computeActualDispString, computeAllPixels } from "./watch_display"
 
+export const indicatorPixelDict = {
+  "Signal"    : "3,17",
+  "Bell"      : "0,22",
+  "PM"        : "1,18",
+  "24H"       : "0,20",
+  "Split"     : "0,23",
+  "Auto"      : "0,14",
+  "Dash"      : "2,4",
+  "Dot_Up"    : "3,4",
+  "Dot_Dn"    : "1,5",
+  "Sun"       : "0,0",
+  "Quote"     : "0,15",
+  "Dbl_Quote" : "0,1",
+  "Colon"     : "2,23"
+};
+
 function currentTimeAsDispString(): string {
     const date = new Date()
     const pad = (num: number) => num < 10 ? ' ' + num : num
@@ -70,7 +86,7 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
         case "preset": {
             switch (action.preset) {
                 case "positions": {
-                    const dispStr = "0123456789"
+                    const dispStr = "012345678901"
                     return {
                         ...pixels,
                         on: reduceDispString(pixels.on, dispStr),
@@ -80,10 +96,10 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                 case "time": {
                     const dispStr = currentTimeAsDispString()
                     const on = reduceDispString(pixels.on, dispStr)
-                    on.add("2,16")
-                    on.add("1,16")
-                    on.delete("2,17")
-                    on.delete("1,10")
+                    on.add(indicatorPixelDict["24H"])
+                    on.add(indicatorPixelDict["Colon"])
+                    on.delete(indicatorPixelDict["PM"])
+                    on.delete(indicatorPixelDict["Split"])
                     return {
                         ...pixels,
                         on,
@@ -91,9 +107,9 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                     }
                 }
                 case "all_on": {
-                    const dispStr = "@@@@@@@@@@"
+                    const dispStr = "@@@@@@@@@@@@"
                     const on = reduceDispString(pixels.on, dispStr)
-                    for (const pixel of ["0,17", "0,16", "2,17", "2,16", "1,10", "1,16"]) {
+                    for (const pixel of Object.values(indicatorPixelDict)) {
                         on.add(pixel)
                     }
                     return {
@@ -105,7 +121,7 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                 case "all_off": {
                     const dispStr = ""
                     const on = reduceDispString(pixels.on, dispStr)
-                    for (const pixel of ["0,17", "0,16", "2,17", "2,16", "1,10", "1,16"]) {
+                    for (const pixel of Object.values(indicatorPixelDict)) {
                         on.delete(pixel)
                     }
                     return {

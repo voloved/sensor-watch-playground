@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect } from 'react';
-import { PixelsProvider, usePixels } from './pixels_reducer';
+import { PixelsProvider, usePixels, indicatorPixelDict } from './pixels_reducer';
 import { Display } from './display';
 
 export default function App() {
@@ -20,6 +20,19 @@ function Home() {
   return (
     <body className="flex justify-center">
       <main className="font-mono flex max-w-screen-md min-h-screen flex-col p-4 gap-8 md:p-12">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
+
+          <div className="flex flex-col tracking-[.25em]">
+            <p
+              className="font-mono pl-1"
+            >012345678901</p>
+            <InputDisplayString
+              value={pixels.dispStr}
+              onChange={(disp) => dispatch({ type: "disp_str", disp })}
+            />
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row w-full gap-1">
           <div className="flex flex-row w-full gap-1">
             <ShortcutButton onClick={() => dispatch({ type: "preset", preset: "positions" })} >positions</ShortcutButton>
@@ -32,23 +45,20 @@ function Home() {
         </div>
 
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
-
-          <div className="flex flex-col tracking-[.25em]">
-            <p
-              className="font-mono pl-1"
-            >0123456789</p>
-            <InputDisplayString
-              value={pixels.dispStr}
-              onChange={(disp) => dispatch({ type: "disp_str", disp })}
-            />
-          </div>
-          <div className="flex flex-row gap-1">
-            <InputIndicator pixel="0,17" label="sig." />
-            <InputIndicator pixel="0,16" label="bell" />
-            <InputIndicator pixel="2,17" label="PM" />
-            <InputIndicator pixel="2,16" label="24H" />
-            <InputIndicator pixel="1,10" label="LAP" />
-            <InputIndicator pixel="1,16" label=":" />
+          <div className="flex flex-row w-full gap-1">
+            <InputIndicator pixel={indicatorPixelDict["Signal"]} label="sig." />
+            <InputIndicator pixel={indicatorPixelDict["Bell"]} label="bell" />
+            <InputIndicator pixel={indicatorPixelDict["PM"]} label="PM" />
+            <InputIndicator pixel={indicatorPixelDict["24H"]} label="24H" />
+            <InputIndicator pixel={indicatorPixelDict["Split"]} label="Splt" />
+            <InputIndicator pixel={indicatorPixelDict["Auto"]} label="Auto" />
+            <InputIndicator pixel={indicatorPixelDict["Dash"]} label="Dash" />
+            <InputIndicator pixel={indicatorPixelDict["Dot_Up"]} label="DtUp" />
+            <InputIndicator pixel={indicatorPixelDict["Dot_Dn"]} label="DtDn" />
+            <InputIndicator pixel={indicatorPixelDict["Sun"]} label="Sun" />
+            <InputIndicator pixel={indicatorPixelDict["Quote"]} label="Qt" />
+            <InputIndicator pixel={indicatorPixelDict["Dbl_Quote"]} label="DblQ" />
+            <InputIndicator pixel={indicatorPixelDict["Colon"]} label=":" />
           </div>
         </div>
 
@@ -88,13 +98,13 @@ function PixelsTable() {
   const onMouseEnter = (pixel: string) => { dispatch({ type: "hover", pixel }) }
   const onMouseLeave = () => { dispatch({ type: "hover", pixel: null }) }
 
-  // com [0-2]
-  // seg [0-23]
+  // com [0-3]
+  // seg [0-27]
   return <table className="table-fixed w-full">
     <thead>
       <tr>
         <td></td>
-        {range(24).map((i) => {
+        {range(27).map((i) => {
           let columnName = null
           if (i < 10) {
             columnName = <><br></br>{i}</>
@@ -108,10 +118,10 @@ function PixelsTable() {
       </tr >
     </thead>
     <tbody>
-      {range(3).map((com) => {
+      {range(4).map((com) => {
         return <tr key={com}>
           <th scope="row" className="border border-gray-500">{com}</th>
-          {range(24).map((seg) => {
+          {range(27).map((seg) => {
             const pixel = `${com},${seg}`
             let bg = ""
             if (pixels.hovered == pixel) {
