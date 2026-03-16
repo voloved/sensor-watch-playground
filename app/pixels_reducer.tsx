@@ -19,14 +19,25 @@ export const indicatorPixelDict = {
 
 function setAllIndicators(on : Set<string>) {
     for (const pixel of Object.values(indicatorPixelDict)) {
-        on.add(pixel);
+        on.add(pixel)
     }
 }
 
 function clearAllIndicators(on : Set<string>) {
     for (const pixel of Object.values(indicatorPixelDict)) {
-        on.delete(pixel);
+        on.delete(pixel)
     }
+}
+
+function clearAllSegments(): Set<string> {
+    const on = new Set<string>()
+
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 27; j++) {
+            on.delete(`${i},${j}`)
+        }
+    }
+    return on
 }
 
 function setSingleCom(com: number): Set<string> {
@@ -36,6 +47,8 @@ function setSingleCom(com: number): Set<string> {
         for (let j = 0; j < 27; j++) {
             if (i === com) {
                 on.add(`${i},${j}`)
+            } else {
+                on.delete(`${i},${j}`)
             }
         }
     }
@@ -147,8 +160,7 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                 }
                 case "all_off": {
                     const dispStr = ""
-                    const on = reduceDispString(pixels.on, dispStr)
-                    clearAllIndicators(on)
+                    const on = clearAllSegments()
                     return {
                         ...pixels,
                         on,
