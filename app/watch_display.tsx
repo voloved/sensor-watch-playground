@@ -6,8 +6,10 @@ should still behave the same.
  */
 
 function watch_display_character(character: string, position: number): string {
-    if (character == 'R' && position > 1 && position < 8) character = 'r'; // We can't display uppercase R in these positions
-    else if (character == 'T' && position > 0) character = 't'; // lowercase t is the only option for these positions
+    if (character == '.') character = '-';
+    else if (character == 'T' && position == 1) character = '.';
+    else if (character == 'R' && position > 1 && position < 8) character = 'r'; // We can't display uppercase R in these positions
+    else if (character == 'T' && position > 1) character = 't'; // lowercase t is the only option for these positions
     else if (character == 'B' && position > 1) character = '8';
     else if (character == 'I' && position > 0) character = '1';
     return character
@@ -28,7 +30,7 @@ const Character_Set = [
     0b01110000, // + (segments E, F and G; looks like ┣╸)
     0b00000100, // ,
     0b01000000, // -
-    0b01000000, // . (same as -, semantically most useful)
+    0b10110001, // Г (. is unused, so this is taking over)
     0b00010010, // /
     0b00111111, // 0
     0b00000110, // 1
@@ -279,7 +281,7 @@ function computePixels(character: string, position: number): pixelUpdate {
         segdata = segdata >> 1;
     }
 
-    if (position == 1 && (character == 'B' || character == 'D' || character == '@')) watch_set_pixel(3, 6); // add funky ninth segment
+    if (position == 1 && (character == 'B' || character == 'D' || character == '@' || character == '.')) watch_set_pixel(3, 6); // add funky ninth segment
 
     return upd
 }
