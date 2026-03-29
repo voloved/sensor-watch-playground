@@ -271,6 +271,7 @@ function About() {
     <ul className="list-disc list-inside">
       <li><Link href="https://www.sensorwatch.net/">Sensor Watch home page</Link></li>
       <li><Link href="https://github.com/voloved/sensor-watch-playground">Source code of this page (GitHub)</Link></li>
+      <li><Link href="./sensor-watch-playground/simulator/index.html">Simulator of the G-Shock Sensorwatch</Link></li>
     </ul>
   </div>
 }
