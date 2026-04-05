@@ -6,8 +6,14 @@ should still behave the same.
  */
 
 function watch_display_character(character: string, position: number): string {
-    if (character == '.') character = '-';
-    else if (character == 'T' && position == 1) character = '.';
+    if (position == 10) {
+        if (character == 'I' || character == 'i' || character == 'L'|| character == 'l') character = '1';
+        else if (character == 'C') character = 'c';
+        else if (character == 'D') character = 'd';
+        else if (character == 'O') character = 'o';
+    }
+    else if (character == '.') character = '-';
+    else if (character == 'T' && position == 1) character = '.'; // '.' holds Г and this is a hack to make T work in the 1 postion
     else if (character == 'R' && position > 1 && position < 8) character = 'r'; // We can't display uppercase R in these positions
     else if (character == 'T' && position > 1) character = 't'; // lowercase t is the only option for these positions
     else if (character == 'B' && position > 1) character = '8';
