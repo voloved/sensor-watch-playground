@@ -2,19 +2,20 @@ import { Dispatch, createContext, useContext, useReducer } from "react"
 import { computeActualDispString, computeAllPixels } from "./watch_display"
 
 export const indicatorPixelDict = {
-  "Signal"    : "3,17",
-  "Bell"      : "0,22",
-  "PM"        : "1,18",
-  "24H"       : "0,20",
-  "Split"     : "0,23",
-  "Auto"      : "0,14",
-  "Dash"      : "2,4",
-  "Dot_Up"    : "3,4",
-  "Dot_Dn"    : "1,5",
-  "Sun"       : "0,0",
-  "Quote"     : "0,15",
-  "Dbl_Quote" : "0,1",
-  "Colon"     : "2,23"
+  "Signal"    : "3,21",
+  "Bell"      : "0,24",
+  "PM"        : "1,22",
+  "24H"       : "0,22",
+  "Split"     : "0,25",
+  "Auto"      : "0,17",
+  "Dash"      : "2,5",
+  "Dot_Up"    : "3,5",
+  "Dot_Dn"    : "1,4",
+  "Sun"       : "0,12",
+  "Quote"     : "0,26",
+  "Dbl_Qt_1"  : "0,15",
+  "Dbl_Qt_2"  : "0,16",
+  "Colon"     : "2,26"
 };
 
 function setAllIndicators(on : Set<string>) {
@@ -152,6 +153,7 @@ function pixelsReducer(pixels: pixelState, action: PixelsAction): pixelState {
                     const dispStr = "@@@@@@@@@@@@"
                     const on = reduceDispString(pixels.on, dispStr)
                     setAllIndicators(on)
+                    on.add("2,20")
                     return {
                         ...pixels,
                         on,

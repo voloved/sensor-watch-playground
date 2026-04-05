@@ -20,7 +20,8 @@ export function Display() {
     <Dot_Up />
     <Dot_Down />
     <Single_Quote />
-    <Double_Quote />
+    <Double_Quote_1 />
+    <Double_Quote_2 />
 
     <Position0 />
     <Position1 />
@@ -126,13 +127,20 @@ function Single_Quote() {
   </Pixel>
 }
 
-function Double_Quote() {
-  return <g id="doublequote" transform="matrix(1.36 0 0 1.2 -351 -519)">
-    <Pixel pixel={indicatorPixelDict["Dbl_Quote"]}>
+function Double_Quote_1() {
+  return <g id="doublequote1" transform="matrix(1.36 0 0 1.2 -351 -519)">
+    <Pixel pixel={indicatorPixelDict["Dbl_Qt_1"]}>
       <path
         id="quote_double_left"
         d="m807 658-3.38 7.69c-1.86 2.84-3.79 5.21-7.25 8.27-0.617 0.542-5.18 0.614-5.77-0.117 0 0-1.01-18.2 2.66-18.2l12.6-0.176c1.57-0.022 1.13 2.56 1.13 2.56z"
       />
+    </Pixel>
+  </g>
+}
+
+function Double_Quote_2() {
+  return <g id="doublequote2" transform="matrix(1.36 0 0 1.2 -351 -519)">
+    <Pixel pixel={indicatorPixelDict["Dbl_Qt_2"]}>
       <path
         id="quote_double_right"
         d="m826 658-3.38 7.69c-1.86 2.84-3.79 5.21-7.25 8.27-0.617 0.542-5.18 0.614-5.77-0.117 0 0-1.01-18.2 2.66-18.2l12.6-0.176c1.57-0.022 1.13 2.56 1.13 2.56z"
@@ -198,63 +206,63 @@ function I24H() {
 
 function Position0() {
   return <g id="pos0" transform="matrix(1.07 0 0 .994 -187 6.09)">
-    <Pixel pixel="3,18">
+    <Pixel pixel="3,20">
       <path
         id="pos0_A"
         d="m416 83h-30l-11-14s-2-3 3-3h47z"
       />
     </Pixel>
 
-    <Pixel pixel="2,17">
+    <Pixel pixel="2,19">
       <path
         id="pos0_B"
         d="m429 70c3-5 8 0 7 20-1 19 0 31-9 28-3-2-9-7-9-7l1-23z"
       />
     </Pixel>
 
-    <Pixel pixel="0,17">
+    <Pixel pixel="0,19">
       <path
         id="pos0_C"
         d="m422 178c2 0 10-4 10-11l2-36c0-10-4-10-4-10l-13 10-1 28z"
       />
     </Pixel>
 
-    <Pixel pixel="0,18">
+    <Pixel pixel="0,21">
       <path
         id="pos0_D"
         d="m383 161h28l6 18h-47c-14-6 2-11 13-18z"
       />
     </Pixel>
 
-    <Pixel pixel="1,20">
+    <Pixel pixel="1,21">
       <path
         id="pos0_E"
         d="m363 168s0-26 1-38c2-9 6-6 6-6l11 8-1 27z"
       />
     </Pixel>
 
-    <Pixel pixel="2,18">
+    <Pixel pixel="2,21">
       <path
         id="pos0_F"
         d="m370 70c-5 2-5 28-5 38 0 8 5 8 5 8l12-8v-25z"
       />
     </Pixel>
 
-    <Pixel pixel="1,6">
+    <Pixel pixel="1,20">
       <path
         id="pos0_G"
         d="m382 128h7l8-4 9 4h6l11-8-10-7h-6l-8 5-8-5h-9l-11 7z"
       />
     </Pixel>
 
-    <Pixel pixel="2,21">
+    <Pixel pixel="0,20">
       <path
         id="pos0_H"
         d="m392 86h16l-1 23-8 5-8-5z"
       />
     </Pixel>
 
-    <Pixel pixel="0,21">
+    <Pixel pixel="2,20">
       <path
         id="pos0_I"
         d="m405 159h-16l1-27 8-4 8 4z"
@@ -293,7 +301,7 @@ function Position1() {
       />
     </Pixel>
 
-    <Pixel pixel="1,17">
+    <Pixel pixel="1,19">
       <path
         id="pos1_E"
         d="m466 168s0-26 1-38c2-9 6-6 6-6l11 8-1 27z"
@@ -314,7 +322,7 @@ function Position1() {
       />
     </Pixel>
 
-    <Pixel pixel="3,6">
+    <Pixel pixel="3,10">
       <path
         id="pos1_H"
         d="m441 66h30s-5 0-5 17h-16"
@@ -402,14 +410,14 @@ function Position2() {
       />
     </Pixel>
 
-    <Pixel pixel="2,5">
+    <Pixel pixel="2,4">
       <path
         id="pos2_E"
         d="m855 187s0-30 2-45c2-10 7-7 7-7l13 9-1 31z"
       />
     </Pixel>
 
-    <Pixel pixel="3,5">
+    <Pixel pixel="3,4">
       <path
         id="pos2_F"
         d="m864 72c-5 3-6 33-6 45 0 9 7 9 7 9l13-9v-30z"
@@ -480,49 +488,49 @@ function Position3() {
 
 function Position4() {
   return <g id="pos4" transform="matrix(.963 0 0 .812 16.3 89.3)">
-    <Pixel pixel="0,19">
+    <Pixel pixel="0,23">
       <path
         id="pos4_A"
         d="m 142,275 h -26 l -26,-30 c 0,0 -3,-6 10,-6 h 62 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,21">
+    <Pixel pixel="1,24">
       <path
         id="pos4_B"
         d="m 169,244 c 7,-9 16,1 15,43 -2,42 0,66 -18,59 -7,-5 -20,-15 -20,-15 l 1,-46 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,19">
+    <Pixel pixel="3,23">
       <path
         id="pos4_C"
         d="m 156,473 c 0,0 16,-1 21,-24 l 3,-76 c 0,-21 -8,-19 -8,-19 l -28,20 -2,58 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,20">
+    <Pixel pixel="3,22">
       <path
         id="pos4_D"
         d="m 108,438 h 26 l 13,38 h -65 c -31,-14 3,-23 26,-38 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,20">
+    <Pixel pixel="2,22">
       <path
         id="pos4_E"
         d="m 64,454 c 0,0 -0,-55 3,-81 3,-18 13,-13 13,-13 l 24,17 -3,56 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,19">
+    <Pixel pixel="1,23">
       <path
         id="pos4_F"
         d="m 80,247 c -10,5 -11,59 -11,80 -0,17 12,16 12,16 l 24,-17 0,-53 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,19">
+    <Pixel pixel="2,23">
       <path
         id="pos4_G"
         d="m 103,368 h 37 l 21,-17 -20,-15 h -37 l -23,16 z"
@@ -533,14 +541,14 @@ function Position4() {
 
 function Position5() {
   return <g id="pos5" transform="matrix(.963 0 0 .812 16.3 89.3)">
-    <Pixel pixel="1,26">
+    <Pixel pixel="1,25">
       <path
         id="pos5_A"
         d="m 299,275 h -33 l -25,-30 c 0,0 -4,-6 9,-6 h 69 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,23">
+    <Pixel pixel="1,26">
       <path
         id="pos5_B"
         d="m 325,244 c 7,-9 16,1 15,43 -2,42 0,66 -18,59 -7,-5 -20,-15 -20,-15 l 1,-46 z"
@@ -554,28 +562,28 @@ function Position5() {
       />
     </Pixel>
 
-    <Pixel pixel="3,23">
+    <Pixel pixel="3,25">
       <path
         id="pos5_D"
         d="m 292,438 13,38 h -74 c -31,-14 3,-23 26,-38 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,21">
+    <Pixel pixel="3,24">
       <path
         id="pos5_E"
         d="m 216,454 c 0,0 -0,-55 3,-81 3,-18 13,-13 13,-13 l 24,17 -3,56 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,22">
+    <Pixel pixel="2,24">
       <path
         id="pos5_F"
         d="m 230,247 c -10,5 -11,59 -11,80 -0,17 12,16 12,16 l 24,-17 0,-53 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,26">
+    <Pixel pixel="2,25">
       <path
         id="pos5_G"
         d="m 254,368 h 43 l 21,-17 -20,-15 h -43 l -23,16 z"
@@ -595,49 +603,49 @@ function Colon() {
 
 function Position6() {
   return <g id="pos6" transform="matrix(.964 0 0 .812 224 89.3)">
-    <Pixel pixel="0,16">
+    <Pixel pixel="0,18">
       <path
         id="pos6_A"
         d="m 299,275 h -33 l -25,-30 c 0,0 -4,-6 9,-6 h 69 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,15">
+    <Pixel pixel="1,17">
       <path
         id="pos6_B"
         d="m 325,244 c 7,-9 16,1 15,43 -2,42 0,66 -18,59 -7,-5 -20,-15 -20,-15 l 1,-46 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,15">
+    <Pixel pixel="2,17">
       <path
         id="pos6_C"
         d="m 312,473 c 0,0 16,-1 21,-24 l 3,-76 c 0,-21 -8,-19 -8,-19 l -28,20 -2,58 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,15">
+    <Pixel pixel="3,17">
       <path
         id="pos6_D"
         d="m 292,438 13,38 h -74 c -31,-14 3,-23 26,-38 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,16">
+    <Pixel pixel="3,18">
       <path
         id="pos6_E"
         d="m 216,454 c 0,0 -0,-55 3,-81 3,-18 13,-13 13,-13 l 24,17 -3,56 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,16">
+    <Pixel pixel="1,18">
       <path
         id="pos6_F"
         d="m 230,247 c -10,5 -11,59 -11,80 -0,17 12,16 12,16 l 24,-17 0,-53 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,16">
+    <Pixel pixel="2,18">
       <path
         id="pos6_G"
         d="m 254,368 h 43 l 21,-17 -20,-15 h -43 l -23,16 z"
@@ -648,49 +656,49 @@ function Position6() {
 
 function Position7() {
   return <g id="pos7" transform="matrix(.964 0 0 .812 374 89.3)">
-    <Pixel pixel="1,13">
+    <Pixel pixel="1,16">
       <path
         id="pos7_A"
         d="m 299,275 h -33 l -25,-30 c 0,0 -4,-6 9,-6 h 69 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,14">
+    <Pixel pixel="1,15">
       <path
         id="pos7_B"
         d="m 325,244 c 7,-9 16,1 15,43 -2,42 0,66 -18,59 -7,-5 -20,-15 -20,-15 l 1,-46 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,25">
+    <Pixel pixel="3,14">
       <path
         id="pos7_C"
         d="m 312,473 c 0,0 16,-1 21,-24 l 3,-76 c 0,-21 -8,-19 -8,-19 l -28,20 -2,58 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,13">
+    <Pixel pixel="3,15">
       <path
         id="pos7_D"
         d="m 292,438 13,38 h -74 c -31,-14 3,-23 26,-38 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,14">
+    <Pixel pixel="3,16">
       <path
         id="pos7_E"
         d="m 216,454 c 0,0 -0,-55 3,-81 3,-18 13,-13 13,-13 l 24,17 -3,56 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,13">
+    <Pixel pixel="2,16">
       <path
         id="pos7_F"
         d="m 230,247 c -10,5 -11,59 -11,80 -0,17 12,16 12,16 l 24,-17 0,-53 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,14">
+    <Pixel pixel="2,15">
       <path
         id="pos7_G"
         d="m 254,368 h 43 l 21,-17 -20,-15 h -43 l -23,16 z"
@@ -701,49 +709,49 @@ function Position7() {
 
 function Position8() {
   return <g id="pos8" transform="matrix(.719 0 0 .608 581 187)">
-    <Pixel pixel="0,24">
+    <Pixel pixel="0,13">
       <path
         id="pos8_A"
         d="m 299,275 h -33 l -25,-30 c 0,0 -4,-6 9,-6 h 69 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,24">
+    <Pixel pixel="1,13">
       <path
         id="pos8_B"
         d="m 325,244 c 7,-9 16,1 15,43 -2,42 0,66 -18,59 -7,-5 -20,-15 -20,-15 l 1,-46 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,24">
+    <Pixel pixel="2,13">
       <path
         id="pos8_C"
         d="m 312,473 c 0,0 16,-1 21,-24 l 3,-76 c 0,-21 -8,-19 -8,-19 l -28,20 -2,58 z"
       />
     </Pixel>
 
-    <Pixel pixel="3,24">
+    <Pixel pixel="3,13">
       <path
         id="pos8_D"
         d="m 292,438 13,38 h -74 c -31,-14 3,-23 26,-38 z"
       />
     </Pixel>
 
-    <Pixel pixel="2,25">
+    <Pixel pixel="2,14">
       <path
         id="pos8_E"
         d="m 216,454 c 0,0 -0,-55 3,-81 3,-18 13,-13 13,-13 l 24,17 -3,56 z"
       />
     </Pixel>
 
-    <Pixel pixel="0,25">
+    <Pixel pixel="0,14">
       <path
         id="pos8_F"
         d="m 230,247 c -10,5 -11,59 -11,80 -0,17 12,16 12,16 l 24,-17 0,-53 z"
       />
     </Pixel>
 
-    <Pixel pixel="1,25">
+    <Pixel pixel="1,14">
       <path
         id="pos8_G"
         d="m 254,368 h 43 l 21,-17 -20,-15 h -43 l -23,16 z"
@@ -814,35 +822,35 @@ function Position10() {
       />
     </Pixel>
 
-    <Pixel pixel="0,7">
+    <Pixel pixel="3,8">
       <path
         id="pos10_B"
         d="m830 70c4-5 9 1 8 24s0 37-10 33c-4-3-11-8-11-8l1-26z"
       />
     </Pixel>
 
-    <Pixel pixel="0,8">
+    <Pixel pixel="1,8">
       <path
         id="pos10_C"
         d="m822 198s9 0 12-14l2-42c0-12-5-11-5-11l-15 11-1 32z"
       />
     </Pixel>
 
-    <Pixel pixel="0,9">
+    <Pixel pixel="2,8">
       <path
         id="pos10_D"
         d="m775 178h35l7 21h-57c-17-8 1-13 15-21z"
       />
     </Pixel>
 
-    <Pixel pixel="2,7">
+    <Pixel pixel="2,8">
       <path
         id="pos10_E"
         d="m752 187s0-30 2-45c2-10 7-7 7-7l13 9-1 31z"
       />
     </Pixel>
 
-    <Pixel pixel="1,22">
+    <Pixel pixel="2,8">
       <path
         id="pos10_G"
         d="m774 139h39l13-9-13-9h-35l-14 10z"
@@ -853,28 +861,28 @@ function Position10() {
 
 function Position11() {
   return <g id="pos10" transform="matrix(.903 0 0 .854 -194 12.1)">
-    <Pixel pixel="3,10">
+    <Pixel pixel="3,7">
       <path
         id="pos11_A"
         d="m919 87h-37l-13-16s0-4 5-4h56z"
       />
     </Pixel>
 
-    <Pixel pixel="3,7">
+    <Pixel pixel="3,6">
       <path
         id="pos11_B"
         d="m933 70c4-5 9 1 8 24s0 37-10 33c-4-3-11-8-11-8l1-26z"
       />
     </Pixel>
 
-    <Pixel pixel="1,4">
+    <Pixel pixel="1,5">
       <path
         id="pos11_C"
         d="m925 198s9 0 12-14l2-42c0-12-5-11-5-11l-15 11-1 32z"
       />
     </Pixel>
 
-    <Pixel pixel="1,8">
+    <Pixel pixel="1,6">
       <path
         id="pos11_D"
         d="m878 178h35l7 21h-57c-17-8 1-13 15-21z"
@@ -888,7 +896,7 @@ function Position11() {
       />
     </Pixel>
 
-    <Pixel pixel="3,8">
+    <Pixel pixel="2,7">
       <path
         id="pos11_F"
         d="m864 72c-5 3-6 33-6 45 0 9 7 9 7 9l13-9v-30z"

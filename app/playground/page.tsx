@@ -58,18 +58,19 @@ function Home() {
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-row w-full gap-1">
             <InputIndicator pixel={indicatorPixelDict["Signal"]} label="sig." />
-            <InputIndicator pixel={indicatorPixelDict["Bell"]} label="Bell" />
+            <InputIndicator pixel={indicatorPixelDict["Bell"]} label="bell" />
             <InputIndicator pixel={indicatorPixelDict["PM"]} label="PM" />
             <InputIndicator pixel={indicatorPixelDict["24H"]} label="24H" />
-            <InputIndicator pixel={indicatorPixelDict["Split"]} label="Splt" />
-            <InputIndicator pixel={indicatorPixelDict["Auto"]} label="Auto" />
-            <InputIndicator pixel={indicatorPixelDict["Sun"]} label="Sun" />
+            <InputIndicator pixel={indicatorPixelDict["Split"]} label="spl" />
+            <InputIndicator pixel={indicatorPixelDict["Auto"]} label="auto" />
+            <InputIndicator pixel={indicatorPixelDict["Sun"]} label="sun" />
             <InputIndicator pixel={indicatorPixelDict["Dash"]} label="-" />
             <InputIndicator pixel={indicatorPixelDict["Dot_Up"]} label="˙" />
             <InputIndicator pixel={indicatorPixelDict["Dot_Dn"]} label="." />
             <InputIndicator pixel={indicatorPixelDict["Quote"]} label="'" />
             <InputIndicator pixel={indicatorPixelDict["Colon"]} label=":" />
-            <InputIndicator pixel={indicatorPixelDict["Dbl_Quote"]} label="''" />
+            <InputIndicator pixel={indicatorPixelDict["Dbl_Qt_1"]} label="'_" />
+            <InputIndicator pixel={indicatorPixelDict["Dbl_Qt_2"]} label="_'" />
           </div>
         </div>
 

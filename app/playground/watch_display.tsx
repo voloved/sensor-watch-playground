@@ -116,25 +116,25 @@ const Character_Set = [
 const Segment_Map = [
     [
     // Positions 0 and 1 are the Weekday or Mode digits
-        { "com" : 3, "seg" : 18 }, // 0A
-        { "com" : 2, "seg" : 17 }, // 0B
-        { "com" : 0, "seg" : 17 }, // 0C
-        { "com" : 0, "seg" : 18 }, // 0D
-        { "com" : 1, "seg" : 20 }, // 0E
-        { "com" : 2, "seg" : 18 }, // 0F
-        { "com" : 1, "seg" : 6 },  // 0G
-        { "com" : 2, "seg" : 21 }, // 0H
-        { "com" : null, "seg" : null }, // 0I
+        { "com" : 3, "seg" : 20 }, // 0A
+        { "com" : 2, "seg" : 19 }, // 0B
+        { "com" : 0, "seg" : 19 }, // 0C
+        { "com" : 0, "seg" : 21 }, // 0D
+        { "com" : 1, "seg" : 21 }, // 0E
+        { "com" : 2, "seg" : 21 }, // 0F
+        { "com" : 1, "seg" : 20 }, // 0G
+        { "com" : 0, "seg" : 20 }, // 0H
+        { "com" : 2, "seg" : 20 }, // 0I
     ],
     [
         { "com" : 3, "seg" : 9 },  // 1A
         { "com" : 2, "seg" : 9 },  // 1B
         { "com" : 1, "seg" : 9 },  // 1C
         { "com" : 0, "seg" : 10 }, // 1D
-        { "com" : 1, "seg" : 17 }, // 1E
+        { "com" : 1, "seg" : 19 }, // 1E
         { "com" : 2, "seg" : 10 }, // 1F
         { "com" : 1, "seg" : 10 }, // 1G
-        { "com" : null, "seg" : null }, // 1H
+        { "com" : 3, "seg" : 10 }, // 1H
     ],
     // Positions 2 and 3 are the Day digits
     [
@@ -142,8 +142,8 @@ const Segment_Map = [
         { "com" : 3, "seg" : 2 },  // 2B
         { "com" : 1, "seg" : 2 },  // 2C
         { "com" : 1, "seg" : 3 },  // 2D
-        { "com" : 2, "seg" : 5 },  // 2E
-        { "com" : 3, "seg" : 5 },  // 2F
+        { "com" : 2, "seg" : 4 },  // 2E
+        { "com" : 3, "seg" : 4 },  // 2F
         { "com" : 2, "seg" : 3 },  // 2G
         { "com" : null, "seg" : null }, // 2H
     ],
@@ -159,53 +159,53 @@ const Segment_Map = [
     ],
     // Positions 4-9 are the Clock digits
     [
-        { "com" : 0, "seg" : 19 }, // 4A
-        { "com" : 1, "seg" : 21 }, // 4B
-        { "com" : 3, "seg" : 19 }, // 4C
-        { "com" : 3, "seg" : 20 }, // 4D
-        { "com" : 2, "seg" : 20 }, // 4E
-        { "com" : 1, "seg" : 19 }, // 4F
-        { "com" : 2, "seg" : 19 }, // 4G
+        { "com" : 0, "seg" : 23 }, // 4A
+        { "com" : 1, "seg" : 24 }, // 4B
+        { "com" : 3, "seg" : 23 }, // 4C
+        { "com" : 3, "seg" : 22 }, // 4D
+        { "com" : 2, "seg" : 22 }, // 4E
+        { "com" : 1, "seg" : 23 }, // 4F
+        { "com" : 2, "seg" : 23 }, // 4G
         { "com" : null, "seg" : null }, // 4H
     ],
     [
-        { "com" : 1, "seg" : 26 }, // 5A
-        { "com" : 1, "seg" : 23 }, // 5B
+        { "com" : 1, "seg" : 25 }, // 5A
+        { "com" : 1, "seg" : 26 }, // 5B
         { "com" : 3, "seg" : 26 }, // 5C
-        { "com" : 3, "seg" : 23 }, // 5D
-        { "com" : 3, "seg" : 21 }, // 5E
-        { "com" : 2, "seg" : 22 }, // 5F
-        { "com" : 2, "seg" : 26 }, // 5G
+        { "com" : 3, "seg" : 25 }, // 5D
+        { "com" : 3, "seg" : 24 }, // 5E
+        { "com" : 2, "seg" : 24 }, // 5F
+        { "com" : 2, "seg" : 25 }, // 5G
         { "com" : null, "seg" : null }, // 5H
     ],
     [
-        { "com" : 0, "seg" : 16 }, // 6A
-        { "com" : 1, "seg" : 15 }, // 6B
-        { "com" : 2, "seg" : 15 }, // 6C
-        { "com" : 3, "seg" : 15 }, // 6D
-        { "com" : 3, "seg" : 16 }, // 6E
-        { "com" : 1, "seg" : 16 }, // 6F
-        { "com" : 2, "seg" : 16 }, // 6G
+        { "com" : 0, "seg" : 18 }, // 6A
+        { "com" : 1, "seg" : 17 }, // 6B
+        { "com" : 2, "seg" : 17 }, // 6C
+        { "com" : 3, "seg" : 17 }, // 6D
+        { "com" : 3, "seg" : 18 }, // 6E
+        { "com" : 1, "seg" : 18 }, // 6F
+        { "com" : 2, "seg" : 18 }, // 6G
         { "com" : null, "seg" : null }, // 6H
     ],
     [
-        { "com" : 1, "seg" : 13 }, // 7A
-        { "com" : 1, "seg" : 14 }, // 7B
-        { "com" : 3, "seg" : 25 }, // 7C
-        { "com" : 3, "seg" : 13 }, // 7D
-        { "com" : 3, "seg" : 14 }, // 7E
-        { "com" : 2, "seg" : 13 }, // 7F
-        { "com" : 2, "seg" : 14 }, // 7G
+        { "com" : 1, "seg" : 16 }, // 7A
+        { "com" : 1, "seg" : 15 }, // 7B
+        { "com" : 3, "seg" : 14 }, // 7C
+        { "com" : 3, "seg" : 15 }, // 7D
+        { "com" : 3, "seg" : 16 }, // 7E
+        { "com" : 2, "seg" : 16 }, // 7F
+        { "com" : 2, "seg" : 15 }, // 7G
         { "com" : null, "seg" : null }, // 7H
     ],
     [
-        { "com" : 0, "seg" : 24 }, // 8A
-        { "com" : 1, "seg" : 24 }, // 8B
-        { "com" : 2, "seg" : 24 }, // 8C
-        { "com" : 3, "seg" : 24 }, // 8D
-        { "com" : 2, "seg" : 25 }, // 8E
-        { "com" : 0, "seg" : 25 }, // 8F
-        { "com" : 1, "seg" : 25 }, // 8G
+        { "com" : 0, "seg" : 13 }, // 8A
+        { "com" : 1, "seg" : 13 }, // 8B
+        { "com" : 2, "seg" : 13 }, // 8C
+        { "com" : 3, "seg" : 13 }, // 8D
+        { "com" : 2, "seg" : 14 }, // 8E
+        { "com" : 0, "seg" : 14 }, // 8F
+        { "com" : 1, "seg" : 14 }, // 8G
         { "com" : null, "seg" : null }, // 8H
     ],
     [
@@ -221,21 +221,21 @@ const Segment_Map = [
     // Positions 10 and 11 are the Month digits
     [
         { "com" : 2, "seg" : 8 },  // 10A
-        { "com" : 0, "seg" : 7 },  // 10B
-        { "com" : 0, "seg" : 8 },  // 10C
-        { "com" : 0, "seg" : 9 },  // 10D
-        { "com" : 2, "seg" : 7 },  // 10E
+        { "com" : 3, "seg" : 8 },  // 10B
+        { "com" : 1, "seg" : 8 },  // 10C
+        { "com" : 2, "seg" : 8 },  // 10D
+        { "com" : 2, "seg" : 8 },  // 10E
         { "com" : null, "seg" : null }, // 10F
-        { "com" : 1, "seg" : 22 }, // 10G
+        { "com" : 2, "seg" : 8 },  // 10G
         { "com" : null, "seg" : null }, // 10H
     ],
     [
-        { "com" : 3, "seg" : 10 }, // 11A
-        { "com" : 3, "seg" : 7 },  // 11B
-        { "com" : 1, "seg" : 4 },  // 11C
-        { "com" : 1, "seg" : 8 },  // 11D
+        { "com" : 3, "seg" : 7 },  // 11A
+        { "com" : 3, "seg" : 6 },  // 11B
+        { "com" : 1, "seg" : 5 },  // 11C
+        { "com" : 1, "seg" : 6 },  // 11D
         { "com" : 1, "seg" : 7 },  // 11E
-        { "com" : 3, "seg" : 8 },  // 11F
+        { "com" : 2, "seg" : 7 },  // 11F
         { "com" : 2, "seg" : 6 },  // 11G
         { "com" : null, "seg" : null }, // 11H
     ]
@@ -258,7 +258,7 @@ function computePixels(character: string, position: number): pixelUpdate {
     let segmaps = Segment_Map[position];
     let segdata = Character_Set[character.charCodeAt(0) - 0x20];
 
-    if (position == 1) watch_clear_pixel(3, 6); // clear funky ninth segment
+    if (position == 0) watch_clear_pixel(2, 20); // clear funky ninth segment
     for (let i = 0; i < 8; i++) {
         const segmap = segmaps[i]
         const com = segmap.com
@@ -272,16 +272,18 @@ function computePixels(character: string, position: number): pixelUpdate {
 
         if (segdata & 1) {
             watch_set_pixel(com, seg);
-            if (com == 2 && seg == 21) watch_set_pixel(0, 21);
+            if (com == 0 && seg == 20) watch_set_pixel(2, 20);
         } else {
             watch_clear_pixel(com, seg);
-            if (com == 2 && seg == 21) watch_clear_pixel(0, 21);
+            if (com == 0 && seg == 20) watch_clear_pixel(2, 20);
         }
 
         segdata = segdata >> 1;
     }
 
-    if (position == 1 && (character == 'B' || character == 'D' || character == '@' || character == '.')) watch_set_pixel(3, 6); // add funky ninth segment
+    // T is . at this point on the G-Shock in position 1, which is actually Г
+    if (position == 0 && (character == 'B' ||character == 'T' || character == 'I' || character == 'M' || character == 'm')) watch_set_pixel(2, 20); // add descender
+    else if (position == 1 && (character == 'B' || character == 'D' || character == '@'|| character == '.')) watch_set_pixel(3, 10); // add funky ninth segment
 
     return upd
 }
