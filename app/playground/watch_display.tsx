@@ -129,8 +129,8 @@ const Segment_Map = [
         { "com" : 1, "seg" : 21 }, // 0E
         { "com" : 2, "seg" : 21 }, // 0F
         { "com" : 1, "seg" : 20 }, // 0G
-        { "com" : 0, "seg" : 20 }, // 0H
-        { "com" : 2, "seg" : 20 }, // 0I
+        { "com" : 2, "seg" : 20 }, // 0H
+        { "com" : 0, "seg" : 20 }, // 0I
     ],
     [
         { "com" : 3, "seg" : 9 },  // 1A
@@ -264,7 +264,6 @@ function computePixels(character: string, position: number): pixelUpdate {
     let segmaps = Segment_Map[position];
     let segdata = Character_Set[character.charCodeAt(0) - 0x20];
 
-    if (position == 0) watch_clear_pixel(2, 20); // clear funky ninth segment
     for (let i = 0; i < 8; i++) {
         const segmap = segmaps[i]
         const com = segmap.com
@@ -278,17 +277,17 @@ function computePixels(character: string, position: number): pixelUpdate {
 
         if (segdata & 1) {
             watch_set_pixel(com, seg);
-            if (com == 0 && seg == 20) watch_set_pixel(2, 20);
+            if (com == 2 && seg == 20) watch_set_pixel(0, 20);
         } else {
             watch_clear_pixel(com, seg);
-            if (com == 0 && seg == 20) watch_clear_pixel(2, 20);
+            if (com == 2 && seg == 20) watch_clear_pixel(0, 20);
         }
 
         segdata = segdata >> 1;
     }
 
     // T is . at this point on the G-Shock in position 1, which is actually Г
-    if (position == 0 && (character == 'm' || character == 'w' || character == 'R')) watch_set_pixel(2, 20); // add descender
+    if (position == 0 && (character == 'm' || character == 'w' || character == 'R')) watch_set_pixel(0, 20); // add descender
     else if (position == 1 && (character == 'B' || character == 'D' || character == '@' || character == '.' || character == 'R')) watch_set_pixel(3, 10); // add funky ninth segment
     if (position == 1 && character == 'R') watch_set_pixel(1, 9);
     return upd

@@ -255,14 +255,14 @@ function Position0() {
       />
     </Pixel>
 
-    <Pixel pixel="0,20">
+    <Pixel pixel="2,20">
       <path
         id="pos0_H"
         d="m392 86h16l-1 23-8 5-8-5z"
       />
     </Pixel>
 
-    <Pixel pixel="2,20">
+    <Pixel pixel="0,20">
       <path
         id="pos0_I"
         d="m405 159h-16l1-27 8-4 8 4z"
