@@ -1735,33 +1735,35 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  31720: function() {return Module['suspended'];},  
- 31752: function($0) {Module['suspended'] = $0;},  
- 31782: function() {var len = lengthBytesUTF8(tx) + 1; var s = _malloc(len); stringToUTF8(tx, s, len); return s;},  
- 31879: function() {tx = "";},  
- 31892: function($0, $1) {const classList = document.querySelector('#btn' + $0).classList; const highlight = 'highlight'; $1 ? classList.add(highlight) : classList.remove(highlight);},  
- 32053: function() {return new Date().getTimezoneOffset() * 60 * 1000;},  
- 32108: function($0) {const date = new Date(Date.now() + $0); return date.getSeconds() | (date.getMinutes() << 6) | (date.getHours() << 12) | (date.getDate() << 17) | ((date.getMonth() + 1) << 22) | ((date.getFullYear() - 2020) << 26);},  
- 32326: function() {return performance.now();},  
- 32356: function() {return performance.now();},  
- 32386: function() {document.getElementById("custom").style.display = "none";},  
- 32446: function() {document.getElementById("classic").style.display = "none";},  
- 32507: function() {document.getElementById("gshock").style.display = "";},  
- 32563: function() {setNewSkin("dw5600");},  
- 32589: function() {document.getElementById("classic").style.display = "none";},  
- 32650: function() {document.getElementById("custom").style.display = "none";},  
- 32710: function() {document.getElementById("gshock").style.display = "none";},  
- 32770: function($0, $1) {document.querySelectorAll("[data-com='" + $0 + "'][data-seg='" + $1 + "']") .forEach((e) => e.style.opacity = 1);},  
- 32888: function($0, $1) {document.querySelectorAll("[data-com='" + $0 + "'][data-seg='" + $1 + "']") .forEach((e) => e.style.opacity = 0);},  
- 33006: function() {document.querySelectorAll("[data-com][data-seg]") .forEach((e) => e.style.opacity = 0);},  
- 33098: function() {if (!Module['audioContext']) { Module['audioContext'] = new (window.AudioContext || window.webkitAudioContext)(); }},  
- 33218: function($0) {const audioContext = Module['audioContext']; if (!audioContext) return; if (!(audioContext._oscillator && audioContext._gain)) { const oscillator = audioContext.createOscillator(); const gain = audioContext.createGain(); oscillator.type = 'triangle'; oscillator.connect(gain); gain.connect(audioContext.destination); oscillator.start(0); audioContext._oscillator = oscillator; audioContext._gain = gain; } audioContext._oscillator.frequency.value = 1e6/$0; audioContext._gain.gain.value = volumeGain;},  
- 33723: function() {const audioContext = Module['audioContext']; if (audioContext && audioContext._gain) { audioContext._gain.gain.value = 0; }},  
- 33851: function($0, $1, $2) {let filter = document.getElementById("ledcolor"); let color_matrix = filter.children[0].values.baseVal; color_matrix[0].value = $0 / 255; color_matrix[6].value = $1 / 255; color_matrix[12].value = $2 / 255; document.getElementById('light').style.opacity = Math.min(255, $0 + $1 + $2) / 255;},  
- 34146: function() {return lat;},  
- 34162: function() {return lon;},  
- 34178: function() {return temp_c || 25.0;},  
- 34205: function() {return -new Date().getTimezoneOffset();}
+  31736: function() {return Module['suspended'];},  
+ 31768: function($0) {Module['suspended'] = $0;},  
+ 31798: function() {var len = lengthBytesUTF8(tx) + 1; var s = _malloc(len); stringToUTF8(tx, s, len); return s;},  
+ 31895: function() {tx = "";},  
+ 31908: function($0, $1) {const classList = document.querySelector('#btn' + $0).classList; const highlight = 'highlight'; $1 ? classList.add(highlight) : classList.remove(highlight);},  
+ 32069: function() {return new Date().getTimezoneOffset() * 60 * 1000;},  
+ 32124: function($0) {const date = new Date(Date.now() + $0); return date.getSeconds() | (date.getMinutes() << 6) | (date.getHours() << 12) | (date.getDate() << 17) | ((date.getMonth() + 1) << 22) | ((date.getFullYear() - 2020) << 26);},  
+ 32342: function() {return performance.now();},  
+ 32372: function() {return performance.now();},  
+ 32402: function() {document.getElementById("custom").style.display = "none";},  
+ 32462: function() {document.getElementById("classic").style.display = "none";},  
+ 32523: function() {document.getElementById("gshock").style.display = "";},  
+ 32579: function() {setNewSkin("dw5600");},  
+ 32605: function() {document.getElementById("classic").style.display = "none";},  
+ 32666: function() {document.getElementById("custom").style.display = "none";},  
+ 32726: function() {document.getElementById("gshock").style.display = "none";},  
+ 32786: function($0, $1) {document.querySelectorAll("[data-com='" + $0 + "'][data-seg='" + $1 + "']") .forEach((e) => e.style.opacity = 1);},  
+ 32904: function($0, $1) {document.querySelectorAll("[data-com='" + $0 + "'][data-seg='" + $1 + "']") .forEach((e) => e.style.opacity = 0);},  
+ 33022: function() {document.querySelectorAll("[data-com][data-seg]") .forEach((e) => e.style.opacity = 0);},  
+ 33114: function() {if (!Module['audioContext']) { Module['audioContext'] = new (window.AudioContext || window.webkitAudioContext)(); }},  
+ 33234: function($0) {const audioContext = Module['audioContext']; if (!audioContext) return; if (!(audioContext._oscillator && audioContext._gain)) { const oscillator = audioContext.createOscillator(); const gain = audioContext.createGain(); oscillator.type = 'triangle'; oscillator.connect(gain); gain.connect(audioContext.destination); oscillator.start(0); audioContext._oscillator = oscillator; audioContext._gain = gain; } audioContext._oscillator.frequency.value = 1e6/$0; audioContext._gain.gain.value = volumeGain;},  
+ 33739: function() {const audioContext = Module['audioContext']; if (audioContext && audioContext._gain) { audioContext._gain.gain.value = 0; }},  
+ 33867: function($0, $1, $2) {let filter = document.getElementById("ledcolor"); let color_matrix = filter.children[0].values.baseVal; color_matrix[0].value = $0 / 255; color_matrix[6].value = $1 / 255; color_matrix[12].value = $2 / 255; document.getElementById('light').style.opacity = Math.min(255, $0 + $1 + $2) / 255;},  
+ 34162: function() {return lat;},  
+ 34178: function() {return lon;},  
+ 34194: function() {return temp_c || 25.0;},  
+ 34221: function() {return -new Date().getTimezoneOffset();},  
+ 34265: function() {return lat;},  
+ 34281: function() {return lon;}
 };
 
 
@@ -3565,7 +3567,7 @@ var _asyncify_start_rewind = Module["_asyncify_start_rewind"] = createExportWrap
 /** @type {function(...*):?} */
 var _asyncify_stop_rewind = Module["_asyncify_stop_rewind"] = createExportWrapper("asyncify_stop_rewind");
 
-var _vectors = Module['_vectors'] = 31552;
+var _vectors = Module['_vectors'] = 31568;
 
 
 

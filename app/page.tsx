@@ -22,8 +22,9 @@ export default function Home() {
           <ul className="list-disc list-inside">
             <li><Link href="playground">Display playground for G-Shock DW5600</Link></li>
             <li><Link href="simulator/index.html">Simulator of the G-Shock Sensorwatch</Link></li>
-            <li><Link href="https://github.com/voloved/second-movement/tree/jolt">Source code of the Sensrwatch Jolt firmware</Link></li>
+            <li><Link href="https://github.com/voloved/second-movement/tree/jolt">Source code of the Sensorwatch Jolt firmware</Link></li>
             <li><Link href="https://github.com/voloved/sensor-watch-playground">Source code of this page (GitHub)</Link></li>
+            <li><Link href="https://discord.gg/n4RMYp8pT3">Discord where the board can be bought.</Link></li>
           </ul>
 
           <h2 className="font-bold mt-4">Sensorwatch Links</h2>
