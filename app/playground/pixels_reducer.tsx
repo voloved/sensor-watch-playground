@@ -63,7 +63,7 @@ function currentTimeAsDispString(): string {
     const daysOfWeek = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"]
 
     const dayOfWeek = daysOfWeek[date.getDay()]
-    const month = pad(date.getMonth())
+    const month = pad(date.getMonth() + 1)
     const day = pad(date.getDate())
     const hours = pad(date.getHours())
     const minutes = pad0(date.getMinutes())
