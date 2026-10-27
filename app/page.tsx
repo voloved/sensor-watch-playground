@@ -42,10 +42,58 @@ const resourceGroups = [
   },
 ]
 
+const useCases = [
+  {
+    src: '/step_counter.jpg',
+    alt: 'G-Shock worn outdoors on a wrist',
+    title: 'Count Steps',
+    description: 'Step Counter is showing I walked 259 steps today and the current time is 8:36.',
+  },
+  {
+    src: '/music_festival.jpg',
+    alt: 'Using the Music Festival face, the watch shows it\'s 7PM and Vince Staples is playing at the What stage of Bonnaroo.',
+    title: 'See who\'s playing at a Music Festival',
+    description: 'Using the Music Festival face, the watch shows it\'s 7PM and Vince Staples is playing at the What stage of Bonnaroo.',
+  },
+  {
+    src: '/blackjack.png',
+    alt: 'Watch playing blackjack.',
+    title: 'Play a quick game of Blackjack.',
+    description: 'Blackjack is one of the many games on this watch. others include Worlde, Simon, and Hi-Low.',
+  },
+  {
+    src: '/endless_runner.webm',
+    type: 'video',
+    alt: 'Endless runner game.',
+    title: 'Test your skill with an Endless Runner.',
+    description: 'The game is simple: you have 30 liters of fuel and every time you jump, it takes a liter. When you\'re on the ground, you refuel. See how long you can avoid hitting the walls you\'re flying over.',
+  },
+  {
+    src: '/sunrise.png',
+    alt: 'Showing when the sunrise is.',
+    title: 'Showing when the sunrise is.',
+    description: 'Sunrise was around 7am this morning, and the watch shows it as as 7:08am.',
+  },
+  {
+    src: '/step-count-on-clock.png',
+    alt: 'Step coutn on clock.',
+    title: 'See your current step count without ever leaving the main clock face.',
+    description: 'We can display the steps instead of the current date on the main face with the press of a button. The top-right shows I walked 3.1K steps today.',
+  }
+]
+
+const galleryImages = [
+  { src: '/step_counter.jpg', alt: 'G-Shock worn outdoors', caption: 'Out and about' },
+  { src: '/20260611_190017.jpg', alt: 'G-Shock displaying Wordle at an outdoor event', caption: 'A little watch-sized fun' },
+  { src: '/20260806_114657.jpg', alt: 'G-Shock beside a modern activity-tracking watch', caption: 'Classic meets modern' },
+  { src: '/jolt-hello.png', alt: 'G-Shock displaying a Hello World message', caption: 'Hello, Jolt' },
+  { src: '/jolt-board.png', alt: 'Jolt custom circuit board', caption: 'The Jolt board' },
+]
+
 const faqs = [
   {
     question: 'What is the Jolt?',
-    answer: 'The Jolt is a custom circuit board that drops into the G-SHock DW5600UE to transform it into a watch that you can customize with open-source software and tons of ready-made watch faces.',
+    answer: 'The Jolt is a custom circuit board that drops into the G-Shock DW5600UE to transform it into a watch that you can customize with open-source software and tons of ready-made watch faces.',
   },
   {
     question: 'What can the Jolt do?',
@@ -71,7 +119,7 @@ const faqs = [
   },
   {
     question: 'How is the screen contrast?',
-    answer: 'The stock LCD uses 4-4.5V. The board\'s micro-controller can\'t safely do above 3.6V. But from my testing, Because of this, the contrast is a bit worse and you\'ll see it\'s dimmer in certain angles, but the it\'s not an issue in normal room brightness and at the most common viewing angles. If you are worried about the dimmer brightness, the board can be modified to be a higher voltage. I\'ve been using both 3.8V and 4V displays on my personal watch for almost a year without issue and I can make that modification for your watch.',
+    answer: <>The stock LCD uses 4-4.5V. The board's micro-controller can't safely do above 3.6V. But from my testing, the contrast is a bit worse and you'll see it's dimmer at certain angles, but it's not an issue in normal room brightness and at the most common viewing angles.<br /><br />If you are worried about the dimmer brightness, the board can be modified to use a higher voltage. I've been using both 3.8V and 4V displays on my personal watch for almost a year without issue, and I can make that modification for your watch.</>,
   },
   {
     question: 'How do I flash new code onto the watch?',
@@ -101,6 +149,7 @@ export default function Home() {
               </summary>
               <div className="absolute right-0 top-full z-20 mt-3 max-h-[70vh] w-[min(90vw,28rem)] overflow-y-auto rounded-2xl border border-[#152b25]/10 bg-[#f3f0e8] p-5 text-[#152b25] shadow-xl">
                 <div className="mb-5 flex gap-5 border-b border-[#152b25]/10 pb-4 text-sm font-bold">
+                  <a className="hover:text-[#bd5634]" href="#gallery">Community gallery</a>
                   <a className="hover:text-[#bd5634]" href="#faq">FAQ</a>
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -201,6 +250,64 @@ export default function Home() {
           <a className="mt-6 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="https://github.com/voloved/second-movement/tree/jolt" target="_blank" rel="noreferrer">
             Explore the Jolt firmware <span aria-hidden="true" className="ml-2">↗</span>
           </a>
+        </div>
+
+        <div className="order-3 grid gap-5 sm:grid-cols-2 md:col-span-2 md:gap-6">
+          {useCases.map((item) => (
+            <article key={item.title} className="overflow-hidden rounded-2xl bg-white/70">
+              {item.type === 'video' ? (
+                <video
+                  className="aspect-[4/3] w-full object-cover"
+                  src={item.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline  
+                  aria-label={item.alt}
+                />
+              ) : (
+                <Image
+                  className="aspect-[4/3] w-full object-cover"
+                  src={item.src}
+                  alt={item.alt}
+                  width={640}
+                  height={480}
+                />
+              )}
+              <div className="p-5">
+                <h3 className="font-extrabold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#69776e]">{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="gallery" className="bg-[#e9e5d9]">
+        <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Watch setups, projects, and ideas</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight">Jolt in the wild</h2>
+            </div>
+            <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/n4RMYp8pT3" target="_blank" rel="noreferrer">
+              Share your Jolt photo ↗
+            </a>
+          </div>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-5">
+            {galleryImages.map((image) => (
+              <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
+                <Image
+                  className="aspect-[4/5] w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+                  src={image.src}
+                  alt={image.alt}
+                  width={480}
+                  height={600}
+                />
+                <figcaption className="px-4 py-3 text-sm font-semibold">{image.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
