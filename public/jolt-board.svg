@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" fill="none">
+  <path d="M92 66h302l54 50v206l-54 32H89l-30-40V111l33-45Z" fill="#344940"/>
+  <path d="M96 78h292l48 44v193l-47 27H95l-24-34V117l25-39Z" fill="#426456"/>
+  <path d="M117 103h255v216H117z" fill="#D6D9BD"/>
+  <path d="M137 123h215v176H137z" fill="#C5CBB0"/>
+  <rect x="188" y="158" width="112" height="106" rx="8" fill="#25382F"/>
+  <rect x="202" y="172" width="84" height="78" rx="4" fill="#334A3E"/>
+  <path d="M212 184h64m-64 12h42m-42 12h57m-57 12h31m-31 12h53" stroke="#7C9B7C" stroke-width="4" stroke-linecap="round"/>
+  <text x="207" y="284" fill="#43574D" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">ARM MCU</text>
+  <rect x="148" y="145" width="27" height="22" rx="3" fill="#D96943"/>
+  <rect x="316" y="152" width="24" height="18" rx="3" fill="#D96943"/>
+  <rect x="316" y="183" width="24" height="18" rx="3" fill="#D96943"/>
+  <rect x="316" y="214" width="24" height="18" rx="3" fill="#D96943"/>
+  <rect x="316" y="245" width="24" height="18" rx="3" fill="#D96943"/>
+  <circle cx="151" cy="190" r="7" fill="#E8B94F"/>
+  <circle cx="151" cy="215" r="7" fill="#E8B94F"/>
+  <circle cx="151" cy="240" r="7" fill="#E8B94F"/>
+  <path d="M158 190h22v-15h8m-30 40h30m-30 25h22v15h8m112-83h18m-18 31h18m-18 31h18m-18 31h18" stroke="#657E6E" stroke-width="3"/>
+  <path d="M120 138h13m0 0v-12m250 12h-14m0 0v-12m-249 171h13m0 0v12m250-12h-14m0 0v12" stroke="#78927F" stroke-width="3"/>
+  <circle cx="103" cy="113" r="5" fill="#E8B94F"/>
+  <circle cx="409" cy="113" r="5" fill="#E8B94F"/>
+  <circle cx="103" cy="308" r="5" fill="#E8B94F"/>
+  <circle cx="409" cy="308" r="5" fill="#E8B94F"/>
+  <path d="m383 75 54 54m-54 0 54-54" stroke="#E8B94F" stroke-width="2" opacity=".65"/>
+  <text x="172" y="348" fill="#D6D9BD" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="4">JOLT PCB</text>
+  <circle cx="402" cy="354" r="42" fill="#E8B94F" fill-opacity=".8"/>
+  <path d="M402 337v34m-17-17h34" stroke="#725D2C" stroke-width="3" stroke-linecap="round"/>
+</svg>

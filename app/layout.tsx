@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'devolov\'s Page',
+  title: 'Jolt Watch',
 }
 
 export default function RootLayout({
