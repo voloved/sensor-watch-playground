@@ -100,16 +100,15 @@ export default function Home() {
             Built for the Casio G-Shock DW-5600
           </p>
         </div>
-        <div className="relative mx-auto w-full max-w-[540px]">
-          <div aria-hidden="true" className="absolute -right-4 -top-5 h-28 w-28 rounded-full bg-[#e8b94f]/60 blur-2xl md:-right-1" />
+        <div className="relative mx-auto w-full max-w-[400px]">
           <Image
-            className="relative w-full drop-shadow-[0_24px_32px_rgba(21,43,37,0.12)]"
-            src="jolt-watch.svg"
-            alt="Illustration of a rugged digital watch with a Jolt display"
-            width={640}
-            height={590}
+            className="relative w-full"
+            src="jolt-hello.png"
+            alt="Jolt watch"
+            width={440}
+            height={390}
           />
-          <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#69776e]">Concept illustration · replace with your watch photo</p>
+          <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#69776e]">Jolt displaying Hello World</p>
         </div>
       </section>
 
@@ -139,8 +138,8 @@ export default function Home() {
 
       <section id="story" className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-[0.8fr_1fr] md:px-8 md:py-24">
         <div className="order-2 md:order-1">
-          <Image className="mx-auto w-full max-w-md" src="jolt-board.svg" alt="Illustration of a custom circuit board designed for a G-Shock watch" width={520} height={420} />
-          <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#69776e]">Concept illustration · replace with your board photo</p>
+          <Image className="mx-auto w-full max-w-md" src="jolt-board.png" alt="Jolt custom circuit board" width={520} height={420} />
+          <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#69776e]">The Jolt board</p>
         </div>
         <div className="order-1 md:order-2">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Small board. Big possibilities.</p>
