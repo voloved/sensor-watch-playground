@@ -13,7 +13,7 @@ const resourceGroups = [
       ['Display playground', 'playground'],
       ['Watch simulator', 'simulator/index.html'],
       ['Firmware source', 'https://github.com/voloved/second-movement/tree/jolt'],
-      ['Installation guide', 'https://www.youtube.com/watch?v=NyiwMyAOnrM'],
+      ['Installation guide', 'https://youtu.be/S6SnwOAQ9PI?si=zYGschGaip3tW__y'],
       ['Tindie product page', 'https://www.tindie.com/products/devolov/jolt-a-custom-pcb-to-make-g-shock-hackable-2/'],
       ['Project Discord', 'https://discord.gg/n4RMYp8pT3'],
       ['Jolt firmware releases', 'https://github.com/voloved/second-movement/releases'],
@@ -22,7 +22,7 @@ const resourceGroups = [
   {
     title: 'Sensor Watch projects',
     links: [
-      ['Step Counter', 'https://github.com/joeycastillo/Sensor-Watch/pull/436'],
+      ['Step Counter', 'https://github.com/joeycastillo/second-movement/pull/191'],
       ['Wordle', 'https://github.com/joeycastillo/Sensor-Watch/pull/436'],
       ['Endless Runner Game', 'https://github.com/joeycastillo/Sensor-Watch/pull/419'],
     ],
@@ -42,6 +42,51 @@ const resourceGroups = [
   },
 ]
 
+const faqs = [
+  {
+    question: 'What is the Jolt?',
+    answer: 'The Jolt is a custom circuit board that drops into the G-SHock DW5600UE to transform it into a watch that you can customize with open-source software and tons of ready-made watch faces.',
+  },
+  {
+    question: 'What can the Jolt do?',
+    answer: <>
+      <ul className="list-disc space-y-1 pl-5">
+        <li>Count steps.</li>
+        <li>Play blackjack, Wordle, endless runner, and other games.</li>
+        <li>Seei the moon phase, sunrise, and sunset.</li>
+        <li>Measure temperature over time.</li>
+        <li>Set multiple alarms.</li>
+        <li>Keep all the features your G-Shock already has.</li>
+        <li>Use an open-source codebase to create your own watch faces and make changes however you want.</li>
+      </ul>
+  </>,
+  },
+  {
+    question: 'What G-Shocks does this work with?',
+    answer: <>Jolt is designed for the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.casio.com/intl/watches/gshock/product.DW-5600UE-1/" target="_blank" rel="noreferrer">G-Shock DW-5600UE</a>. It uses Casio module 3525, so Jolt should fit <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://shockbase.org/watches/modules_dyn.php?module=3525" target="_blank" rel="noreferrer">any of these watches</a>. If you’re in the U.S., I found that the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.walmart.com/ip/Casio-Men-s-G-Shock-Watch-DW5600E-1V/297911752" target="_blank" rel="noreferrer">DW5600E-1V at Walmart</a> works.</>,
+  },
+  {
+    question: 'How long does the battery last?',
+    answer: 'This watch uses 4-6uA in normal cases. That is around 2 years off a CR2016 battery. I definitely expect at least one year of battery. The batterty life will drop if the step counter is used.',
+  },
+  {
+    question: 'How is the screen contrast?',
+    answer: 'The stock LCD uses 4-4.5V. The board\'s micro-controller can\'t safely do above 3.6V. But from my testing, Because of this, the contrast is a bit worse and you\'ll see it\'s dimmer in certain angles, but the it\'s not an issue in normal room brightness and at the most common viewing angles. If you are worried about the dimmer brightness, the board can be modified to be a higher voltage. I\'ve been using both 3.8V and 4V displays on my personal watch for almost a year without issue and I can make that modification for your watch.',
+  },
+  {
+    question: 'How do I flash new code onto the watch?',
+    answer: 'The top of the board has a cut-out for a micro-USB connector. Connect the watch to your computer, press the reset button twice quickly, and you should see a device called \'WATCHBOOT\'. If you don\'t see anything, press the reset button more quickly. Then, drag the UF2 file into the device, and it\'ll be updated.',
+  },
+  {
+    question: 'Aside from the watch, do I need any other special items to use this watch?',
+    answer: 'The circuit board connects to your computer for updating the software with a micro-USB connector. The board is 0.4mm in thickness, which is thinner than your standard micro-USB connector. To get the board to fit, squeeze that opening of a micro-USB connector you don\'t care about together a bit with pliers or side-cutters.',
+  },
+  {
+    question: 'How can I try the display and firmware?',
+    answer: 'Use the display playground and watch simulator from the Links menu to explore the project. The playground can show what kind of text you can display on the G-Shock. Thesimulator allows you to test out how the watch functions before you buy.',
+  },
+]
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f3f0e8] text-[#152b25]">
@@ -55,6 +100,9 @@ export default function Home() {
                 Links <span aria-hidden="true" className="text-xs">⌄</span>
               </summary>
               <div className="absolute right-0 top-full z-20 mt-3 max-h-[70vh] w-[min(90vw,28rem)] overflow-y-auto rounded-2xl border border-[#152b25]/10 bg-[#f3f0e8] p-5 text-[#152b25] shadow-xl">
+                <div className="mb-5 flex gap-5 border-b border-[#152b25]/10 pb-4 text-sm font-bold">
+                  <a className="hover:text-[#bd5634]" href="#faq">FAQ</a>
+                </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   {resourceGroups.map((group) => (
                     <div key={group.title}>
@@ -170,6 +218,22 @@ export default function Home() {
             <p className="text-sm font-extrabold">Made for tinkering</p>
             <p className="mt-1 text-sm text-[#69776e]">Test ideas with the online simulator and display tools.</p>
           </div>
+        </div>
+      </section>
+
+      <section id="faq" className="mx-auto max-w-4xl px-5 py-14 md:px-8 md:py-20">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Good to know</p>
+        <h2 className="mt-2 text-3xl font-black tracking-tight">Frequently asked questions</h2>
+        <div className="mt-7 divide-y divide-[#152b25]/15 border-y border-[#152b25]/15">
+          {faqs.map((item) => (
+            <details key={item.question} className="group py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">
+                {item.question}
+                <span aria-hidden="true" className="text-xl text-[#bd5634] transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 max-w-3xl pr-8 leading-7 text-[#69776e]">{item.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 
