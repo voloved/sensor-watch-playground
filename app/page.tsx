@@ -44,7 +44,7 @@ const resourceGroups = [
 
 const useCases = [
   {
-    src: '/step_counter.jpg',
+    src: '/step_counter.png',
     alt: 'G-Shock worn outdoors on a wrist',
     title: 'Count Steps',
     description: 'Step Counter is showing I walked 259 steps today and the current time is 8:36.',
@@ -160,7 +160,6 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <a className="mt-5 inline-block text-sm font-bold text-[#bd5634] underline underline-offset-4" href="https://github.com/voloved/sensor-watch-playground" target="_blank" rel="noreferrer">Website source ↗</a>
               </div>
             </details>
             <a className="rounded-full bg-[#d96943] px-4 py-2 text-white transition-colors hover:bg-[#bd5634] md:px-5" href="#preorder">Preorder</a>
@@ -206,6 +205,7 @@ export default function Home() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#e8b94f]">Help make the next run happen</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">The goal: 20 preorders.</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Preorders so far: 1 preorder.</h2>
             <p className="mt-4 max-w-xl leading-7 text-white/75">
               I’m gathering interest for a batch of Jolt boards. Choose a payment option to get in touch about a preorder.
             </p>
@@ -275,23 +275,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[#152b25]/10 bg-[#e9e5d9]">
-        <div className="mx-auto grid max-w-6xl gap-px px-5 py-9 sm:grid-cols-3 md:px-8">
-          <div className="py-3 sm:px-5">
-            <p className="text-sm font-extrabold">Made for the DW-5600</p>
-            <p className="mt-1 text-sm text-[#69776e]">A classic watch, ready for a new board.</p>
-          </div>
-          <div className="py-3 sm:border-x sm:border-[#152b25]/10 sm:px-8">
-            <p className="text-sm font-extrabold">Open firmware</p>
-            <p className="mt-1 text-sm text-[#69776e]">Explore the code and build your own features.</p>
-          </div>
-          <div className="py-3 sm:px-8">
-            <p className="text-sm font-extrabold">Made for tinkering</p>
-            <p className="mt-1 text-sm text-[#69776e]">Test ideas with the online simulator and display tools.</p>
-          </div>
-        </div>
-      </section>
-
       <section id="faq" className="mx-auto max-w-4xl px-5 py-14 md:px-8 md:py-20">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Good to know</p>
         <h2 className="mt-2 text-3xl font-black tracking-tight">Frequently asked questions</h2>
@@ -314,7 +297,6 @@ export default function Home() {
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Keep exploring</p>
             <h2 className="mt-2 text-3xl font-black tracking-tight">Project links</h2>
           </div>
-          <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://github.com/voloved/sensor-watch-playground" target="_blank" rel="noreferrer">Website source ↗</a>
         </div>
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {resourceGroups.map((group) => (
@@ -335,7 +317,7 @@ export default function Home() {
       </section>
 
       <footer className="bg-[#152b25] px-5 py-7 text-center text-sm text-white/60">
-        Built with curiosity, for the classic G-Shock DW-5600.
+        Disclaimer: This webpage's template was vibe-coded, but not much else in this project was. The circuit board and firmware were made, reviewed, and tested manually.
       </footer>
     </main>
   )
