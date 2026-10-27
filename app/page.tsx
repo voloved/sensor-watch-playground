@@ -82,14 +82,6 @@ const useCases = [
   }
 ]
 
-const galleryImages = [
-  { src: '/step_counter.jpg', alt: 'G-Shock worn outdoors', caption: 'Out and about' },
-  { src: '/20260611_190017.jpg', alt: 'G-Shock displaying Wordle at an outdoor event', caption: 'A little watch-sized fun' },
-  { src: '/20260806_114657.jpg', alt: 'G-Shock beside a modern activity-tracking watch', caption: 'Classic meets modern' },
-  { src: '/jolt-hello.png', alt: 'G-Shock displaying a Hello World message', caption: 'Hello, Jolt' },
-  { src: '/jolt-board.png', alt: 'Jolt custom circuit board', caption: 'The Jolt board' },
-]
-
 const faqs = [
   {
     question: 'What is the Jolt?',
@@ -280,34 +272,6 @@ export default function Home() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section id="gallery" className="bg-[#e9e5d9]">
-        <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Watch setups, projects, and ideas</p>
-              <h2 className="mt-2 text-3xl font-black tracking-tight">Jolt in the wild</h2>
-            </div>
-            <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/n4RMYp8pT3" target="_blank" rel="noreferrer">
-              Share your Jolt photo ↗
-            </a>
-          </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-5">
-            {galleryImages.map((image) => (
-              <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
-                <Image
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
-                  src={image.src}
-                  alt={image.alt}
-                  width={480}
-                  height={600}
-                />
-                <figcaption className="px-4 py-3 text-sm font-semibold">{image.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
         </div>
       </section>
 
