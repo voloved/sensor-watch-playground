@@ -18,8 +18,7 @@ function Home() {
   }, [dispatch])
 
   return (
-    <body className="flex justify-center">
-      <main className="font-mono flex max-w-screen-md min-h-screen flex-col p-4 gap-2 md:p-12">
+      <main className="font-mono mx-auto flex max-w-screen-md min-h-screen flex-col p-4 gap-2 md:p-12">
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
 
           <div className="flex flex-col tracking-[.25em]">
@@ -82,7 +81,6 @@ function Home() {
 
         <About />
       </main>
-    </body>
   )
 }
 

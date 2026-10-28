@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Countdown from './countdown'
 
 export const metadata: Metadata = {
   title: 'Jolt — Sensor Watch PCB',
@@ -186,6 +187,7 @@ export default function Home() {
               What is Jolt?
             </a>
           </div>
+          <Countdown />
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#69776e]">
             Built for the Casio G-Shock DW-5600
           </p>
@@ -287,7 +289,7 @@ export default function Home() {
                 {item.question}
                 <span aria-hidden="true" className="text-xl text-[#bd5634] transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="mt-3 max-w-3xl pr-8 leading-7 text-[#69776e]">{item.answer}</p>
+              <div className="mt-3 max-w-3xl pr-8 leading-7 text-[#69776e]">{item.answer}</div>
             </details>
           ))}
         </div>
