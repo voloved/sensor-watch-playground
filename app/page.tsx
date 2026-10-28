@@ -10,7 +10,7 @@ const resourceGroups = [
   {
     title: 'Jolt',
     links: [
-      ['Display playground', 'playground'],
+      ['Display playground', 'playground/'],
       ['Watch simulator', 'simulator/index.html'],
       ['Firmware source', 'https://github.com/voloved/second-movement/tree/jolt'],
       ['Installation guide', 'https://youtu.be/S6SnwOAQ9PI?si=zYGschGaip3tW__y'],
@@ -111,7 +111,7 @@ const faqs = [
   },
   {
     question: 'How is the screen contrast?',
-    answer: <>The stock LCD uses 4-4.5V. The board's micro-controller can't safely do above 3.6V. But from my testing, the contrast is a bit worse and you'll see it's dimmer at certain angles, but it's not an issue in normal room brightness and at the most common viewing angles.<br /><br />If you are worried about the dimmer brightness, the board can be modified to use a higher voltage. I've been using both 3.8V and 4V displays on my personal watch for almost a year without issue, and I can make that modification for your watch.</>,
+    answer: <>The stock LCD uses 4–4.5 V. The board’s microcontroller can’t safely go above 3.6 V. In my testing, the contrast is a bit lower and the display looks dimmer at certain angles, but it’s not an issue in normal room brightness or at the most common viewing angles.<br /><br />If you’re concerned about the dimmer appearance, the board can be modified to use a higher voltage. I’ve used both 3.8 V and 4 V configurations in my personal watch for almost a year without issue, and I can make that modification for your watch.</>,
   },
   {
     question: 'How do I flash new code onto the watch?',
@@ -135,6 +135,7 @@ export default function Home() {
           <a className="shrink-0 text-lg font-black tracking-[0.18em]" href="#top">JOLT<span className="text-[#d96943]">.</span></a>
           <div className="flex items-center gap-4 text-sm font-semibold md:gap-7">
             <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="#story">The project</a>
+            <a className="transition-colors hover:text-[#d96943]" href="blog/">Blog</a>
             <details className="group relative">
               <summary className="cursor-pointer list-none transition-colors hover:text-[#d96943]">
                 Links <span aria-hidden="true" className="text-xs">⌄</span>
@@ -143,6 +144,7 @@ export default function Home() {
                 <div className="mb-5 flex gap-5 border-b border-[#152b25]/10 pb-4 text-sm font-bold">
                   <a className="hover:text-[#bd5634]" href="#gallery">Community gallery</a>
                   <a className="hover:text-[#bd5634]" href="#faq">FAQ</a>
+                  <a className="hover:text-[#bd5634]" href="blog/">Blog</a>
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   {resourceGroups.map((group) => (
@@ -317,7 +319,7 @@ export default function Home() {
       </section>
 
       <footer className="bg-[#152b25] px-5 py-7 text-center text-sm text-white/60">
-        Disclaimer: This webpage's template was vibe-coded, but not much else in this project was. The circuit board and firmware were made, reviewed, and tested manually.
+        Disclaimer: This webpage’s template was vibe-coded, but not much else in this project was. The circuit board and firmware were made, reviewed, and tested manually.
       </footer>
     </main>
   )
