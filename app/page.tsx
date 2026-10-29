@@ -85,9 +85,10 @@ const useCases = [
 
 const galleryImages = [
   { src: '/gallery/gal1.png' },
-  { src: '/gallery/gal2.png' },
-  { src: '/gallery/gal3.png' },
+  { src: '/gallery/gal4.png' },
   { src: '/contrast_imgs/fig07.png' },
+  { src: '/gallery/gal6.png' },
+  { src: '/gallery/gal5.png' },
 ]
 
 const faqs = [
@@ -255,6 +256,12 @@ export default function Home() {
           <p className="mt-5 leading-7 text-[#43564d]">
             Because the only thing that is being changed is the circuit board, you'll retain the drop and water resistance of your G-Shock. Making this the most indestructible device you'll own that can play Wordle.
           </p>
+
+          <p className="mt-4 leading-7 text-[#43564d]">
+            This project is forked off of <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.joeycastillo.com/">Joey Castillo's</a> project for the F91W, called the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.sensorwatch.net/">Sensor Watch</a>. The Sensor Watch is nearly the same as this project, but uses an F91W instead of a G-SHock. I originally used that watch, but found that the F91W broke too often from repeated button presses caused by the higher functionality and I also wanted a watch i can drop and one with an extra button.
+          </p>
+
+
           <p className="mt-5 leading-7 text-[#43564d]">
             The first batch of the Jolt boards were sold in August 2026 to 20 customers. It sold out in a few months.
           </p>
@@ -322,7 +329,7 @@ export default function Home() {
               Share your Jolt photo
             </a>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+          <div className="mt-8 grid grid-cols-3 gap-3 md:grid-cols-5 md:gap-5">
             {galleryImages.map((image) => (
               <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
                 <Image

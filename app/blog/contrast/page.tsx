@@ -64,9 +64,14 @@ export default function ContrastPost() {
       <header className="border-b border-[#152b25]/10">
         <nav aria-label="Main navigation" className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4 md:px-8">
           <a className="text-lg font-black tracking-[0.18em]" href="../../">JOLT<span className="text-[#d96943]">.</span></a>
-          <a className="text-sm font-semibold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="../">
-            All posts
-          </a>
+          <div className="flex items-center gap-4">
+            <a className="text-sm font-semibold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="../">
+              All posts
+            </a>
+            <a className="text-sm font-semibold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="../../">
+              Back to project
+            </a>
+          </div>
         </nav>
       </header>
 
