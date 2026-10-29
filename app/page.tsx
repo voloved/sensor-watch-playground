@@ -218,24 +218,36 @@ export default function Home() {
               </div>
             </div>
             <p className="mt-4 max-w-xl leading-7 text-white/75">
-              I’m gathering interest for a batch of Jolt boards. Choose a payment option to get in touch about a preorder.
+              <strong>How to preorder:</strong> Use one of the options to the right and send <strong>${PREORDER_PRICE}</strong> with a message about your name, contact info, and address. Once the goal is met, I'll reach out to you with the expected time of delivery and any other needed shipping info.
             </p>
+            <div className="mt-3 max-w-xl text-sm leading-6 text-white/75">
+              <p>Questions? Contact me:</p>
+              <ul className="mt-1 list-disc pl-5">
+                <li>
+                  Discord (preferred): <a className="font-semibold underline underline-offset-4 hover:text-[#f2ce75]" href="https://discord.gg/m3gYtCge4x" target="_blank" rel="noreferrer">Jolt Discord</a> — I’m <strong>devolov</strong>.
+                </li>
+                <li>
+                  Email: <a className="font-semibold underline underline-offset-4 hover:text-[#f2ce75]" href="mailto:devolov.jolt@gmail.com">devolov.jolt@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+
             <div className="mt-5 inline-flex items-baseline gap-3 rounded-2xl border border-[#e8b94f]/40 bg-[#e8b94f]/10 px-5 py-3">
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#e8b94f]">Preorder price</span>
               <span className="text-4xl font-black leading-none tracking-tight text-[#f2ce75]">${PREORDER_PRICE}</span>
             </div>
             <p className="mt-3 max-w-xl text-sm leading-6 text-white/75">
-              Preorders close on {PREORDER_END_DATE_LABEL}. If the goal of {PREORDER_GOAL} preorders isn’t met by then, I’ll refund all preorders.
+              Preorders close on <strong>{PREORDER_END_DATE_LABEL}</strong>. If the goal of {PREORDER_GOAL} preorders isn’t met by then, I’ll refund all preorders.
             </p>
           </div>
           <div className="grid min-w-56 gap-3 sm:grid-cols-3 md:grid-cols-1">
             <a className="rounded-full bg-[#e8b94f] px-6 py-3 text-center text-sm font-extrabold text-[#152b25] transition-colors hover:bg-[#f2ce75]" href="https://venmo.com/u/David-Volovskiy" target="_blank" rel="noreferrer">
               Venmo <span className="block text-xs font-medium opacity-75">@David-Volovskiy · verify 6694</span>
             </a>
-            <a className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-extrabold transition-colors hover:border-white hover:bg-white/10" href="https://paypal.me/voloved" target="_blank" rel="noreferrer">
+            <a className="rounded-full bg-[#e8b94f] px-6 py-3 text-center text-sm font-extrabold text-[#152b25] transition-colors hover:bg-[#f2ce75]" href="https://paypal.me/voloved" target="_blank" rel="noreferrer">
               PayPal <span className="block text-xs font-medium text-white/65">paypal.me/voloved</span>
             </a>
-            <a className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-extrabold transition-colors hover:border-white hover:bg-white/10" href="mailto:devolov@gmail.com?subject=Jolt%20watch%20preorder">
+            <a className="rounded-full bg-[#e8b94f] px-6 py-3 text-center text-sm font-extrabold text-[#152b25] transition-colors hover:bg-[#f2ce75]" href="mailto:devolov@gmail.com?subject=Jolt%20watch%20preorder">
               Zelle <span className="block text-xs font-medium text-white/65">devolov@gmail.com</span>
             </a>
           </div>
