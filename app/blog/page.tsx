@@ -24,6 +24,22 @@ export default function BlogPage() {
 
         <div className="mt-12 border-t border-[#152b25]/15">
           <article className="border-b border-[#152b25]/15 py-8">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#bd5634]">Power · Hardware</p>
+            <time className="mt-2 block text-sm text-[#69776e]" dateTime="2026-10-28">October 28, 2026</time>
+            <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
+              <a className="hover:text-[#bd5634]" href="battery-life/">Battery life calculations</a>
+            </h2>
+            <p className="mt-3 max-w-2xl leading-7 text-[#69776e]">
+              A back-of-the-envelope estimate of Jolt’s battery life, and how using the step counter may affect it.
+            </p>
+            <a className="mt-5 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="battery-life/">
+              Read the post <span aria-hidden="true" className="ml-2">↗</span>
+            </a>
+          </article>
+        </div>
+
+        <div className="mt-12 border-t border-[#152b25]/15">
+          <article className="border-b border-[#152b25]/15 py-8">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#bd5634]">Display · Hardware</p>
             <time className="mt-2 block text-sm text-[#69776e]" dateTime="2026-10-28">October 28, 2026</time>
             <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
@@ -38,21 +54,6 @@ export default function BlogPage() {
           </article>
         </div>
 
-        <div className="mt-12 border-t border-[#152b25]/15">
-          <article className="border-b border-[#152b25]/15 py-8">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#bd5634]">Power · Hardware</p>
-            <time className="mt-2 block text-sm text-[#69776e]" dateTime="2026-10-28">October 28, 2026</time>
-            <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
-              <a className="hover:text-[#bd5634]" href="battery-life/">Battery life calculations</a>
-            </h2>
-            <p className="mt-3 max-w-2xl leading-7 text-[#69776e]">
-              A back-of-the-envelope estimate of Jolt’s battery life, and how using the step counter may affect it.
-            </p>
-            <a className="mt-5 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="battery-life/">
-              Read the post <span aria-hidden="true" className="ml-2">↗</span>
-            </a>
-          </article>
-        </div>
       </section>
     </main>
   )

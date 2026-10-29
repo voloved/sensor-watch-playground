@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 const PREORDER_PRICE = 67
-const PREORDER_END_DATE = new Date('2026-12-01T00:00:00Z')
+const PREORDER_END_DATE = new Date('2027-02-07T00:00:00Z')
 const PREORDER_GOAL = 20
 const CURRENT_PREORDERS = 1
 const PREORDER_PROGRESS_COUNT = Math.min(Math.max(CURRENT_PREORDERS, 0), PREORDER_GOAL)
