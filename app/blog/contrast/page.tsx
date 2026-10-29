@@ -206,9 +206,11 @@ export default function ContrastPost() {
           </aside>
         </div>
 
-        <section className="mt-12" aria-labelledby="lcd-voltage-heading">
+        <section id="how-to-change-lcd-voltage" className="mt-12 scroll-mt-24" aria-labelledby="lcd-voltage-heading">
           <h2 id="lcd-voltage-heading" className="text-2xl font-black leading-tight tracking-tight">
-            How to change the LCD Voltage
+            <a className="transition-colors hover:text-[#bd5634]" href="#how-to-change-lcd-voltage">
+              How to change the LCD Voltage
+            </a>
           </h2>
           <div className="mt-5 space-y-6 text-base leading-8 text-[#43564d] [&_p]:indent-8">
             <p>

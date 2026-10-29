@@ -168,7 +168,7 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a className="rounded-full bg-[#152b25] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5" href="#preorder">
-              Get a preorder for ${PREORDER_PRICE}<span aria-hidden="true">↗</span>
+              Get a preorder for ${PREORDER_PRICE}
             </a>
             <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="#story">
               What is Jolt?
@@ -319,7 +319,7 @@ export default function Home() {
             </div>
             <a className="inline-flex items-center gap-2 text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/m3gYtCge4x" target="_blank" rel="noreferrer">
               <DiscordIcon className="h-4 w-4" />
-              Share your Jolt photo ↗
+              Share your Jolt photo
             </a>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
@@ -354,7 +354,7 @@ export default function Home() {
                   <li key={label}>
                     <a className="inline-flex items-center text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 transition-colors hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
                       {href.includes('discord.gg') && <DiscordIcon className="mr-2 h-4 w-4 shrink-0" />}
-                      {label}{href.startsWith('http') && <span aria-hidden="true"> ↗</span>}
+                      {label}
                     </a>
                   </li>
                 ))}
