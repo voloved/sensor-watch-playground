@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: 'Meet Jolt: a custom board that brings new life to the classic G-Shock DW-5600.',
 }
 
+function DiscordIcon({ className }: { className: string }) {
+  return (
+    <svg aria-hidden="true" className={className} viewBox="0 0 127.14 96.36" fill="currentColor">
+      <path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.9 97.68 97.68 0 0 0-29.2 0A72.37 72.37 0 0 0 45.55 0 105.89 105.89 0 0 0 19.28 8.09C2.63 32.65-1.87 56.6.38 80.21h0a105.73 105.73 0 0 0 32.21 16.3 77.7 77.7 0 0 0 6.93-11.34 68.42 68.42 0 0 1-10.93-5.21c.92-.67 1.8-1.39 2.66-2.14a75.54 75.54 0 0 0 64.32 0c.87.75 1.75 1.47 2.66 2.14a68.68 68.68 0 0 1-10.94 5.22 77 77 0 0 0 6.93 11.33 105.25 105.25 0 0 0 32.22-16.3h0c2.64-27.4-4.53-51.13-19.04-72.14ZM42.45 65.69c-6.27 0-11.42-5.73-11.42-12.77s5.03-12.78 11.42-12.78 11.53 5.74 11.42 12.78-5.03 12.77-11.42 12.77Zm42.24 0c-6.27 0-11.42-5.73-11.42-12.77s5.03-12.78 11.42-12.78 11.53 5.74 11.42 12.78-5.03 12.77-11.42 12.77Z" />
+    </svg>
+  )
+}
+
 const resourceGroups = [
   {
     title: 'Jolt',
@@ -16,7 +24,7 @@ const resourceGroups = [
       ['Firmware source', 'https://github.com/voloved/second-movement/tree/jolt'],
       ['Installation guide', 'https://youtu.be/S6SnwOAQ9PI?si=zYGschGaip3tW__y'],
       ['Tindie product page', 'https://www.tindie.com/products/devolov/jolt-a-custom-pcb-to-make-g-shock-hackable-2/'],
-      ['Project Discord', 'https://discord.gg/n4RMYp8pT3'],
+      ['Project Discord', 'https://discord.gg/m3gYtCge4x'],
       ['Jolt firmware releases', 'https://github.com/voloved/second-movement/releases'],
     ],
   },
@@ -101,6 +109,10 @@ const faqs = [
     answer: <>The stock LCD uses 4–4.5 V. The board’s microcontroller can’t safely go above 3.6 V. In my testing, the contrast is a bit lower and the display looks dimmer at certain angles, but it’s not an issue in normal room brightness or at the most common viewing angles.<br /><br />If you’re concerned about the dimmer appearance, the board can be modified to use a higher voltage. I’ve used both 3.8 V and 4 V configurations in my personal watch for almost a year without issue, and I can make that modification for your watch. But it will be at your own risk.<br /><br />This is more discussed in my <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/contrast/">blog post</a>.</>,
   },
   {
+    question: 'How do I install the board?',
+    answer: <><a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://youtu.be/S6SnwOAQ9PI?si=zYGschGaip3tW__y">Here is a link to the Install Guide.</a></>,
+  },
+  {
     question: 'How do I flash new code onto the watch?',
     answer: 'The top of the board has a cut-out for a micro-USB connector. Connect the watch to your computer, press the reset button twice quickly, and you should see a device called \'WATCHBOOT\'. If you don\'t see anything, press the reset button more quickly. Then, drag the UF2 file into the device, and it\'ll be updated.',
   },
@@ -124,6 +136,9 @@ export default function Home() {
             <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="blog/">Blog</a>
             <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="simulator/index.html">Simulator</a>
             <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="playground/">Playground</a>
+            <a className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#152b25]/15 transition-colors hover:text-[#d96943]" href="https://discord.gg/m3gYtCge4x" target="_blank" rel="noreferrer" aria-label="Join the Jolt Discord">
+              <DiscordIcon className="h-5 w-5" />
+            </a>
             <details className="group relative">
               <summary className="inline-flex h-12 cursor-pointer list-none items-center rounded-full border border-[#152b25]/15 px-3 transition-colors hover:text-[#d96943]">
                 Links <span aria-hidden="true" className="text-xs">⌄</span>
@@ -143,6 +158,7 @@ export default function Home() {
                         {group.links.map(([label, href]) => (
                           <li key={label}>
                             <a className="inline-flex min-h-11 items-center text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
+                              {href.includes('discord.gg') && <DiscordIcon className="mr-2 h-4 w-4 shrink-0" />}
                               {label}{href.startsWith('http') && <span aria-hidden="true"> ↗</span>}
                             </a>
                           </li>
@@ -293,7 +309,8 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Show off your wrist shot</p>
               <h2 className="mt-2 text-3xl font-black tracking-tight">Customer photos</h2>
             </div>
-            <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/n4RMYp8pT3" target="_blank" rel="noreferrer">
+            <a className="inline-flex items-center gap-2 text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/m3gYtCge4x" target="_blank" rel="noreferrer">
+              <DiscordIcon className="h-4 w-4" />
               Share your Jolt photo ↗
             </a>
           </div>
@@ -327,7 +344,8 @@ export default function Home() {
               <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-3">
                 {group.links.map(([label, href]) => (
                   <li key={label}>
-                    <a className="text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 transition-colors hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
+                    <a className="inline-flex items-center text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 transition-colors hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
+                      {href.includes('discord.gg') && <DiscordIcon className="mr-2 h-4 w-4 shrink-0" />}
                       {label}{href.startsWith('http') && <span aria-hidden="true"> ↗</span>}
                     </a>
                   </li>
