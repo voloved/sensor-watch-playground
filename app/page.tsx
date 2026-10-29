@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description: 'Meet Jolt: a custom board that brings new life to the classic G-Shock DW-5600.',
 }
 
+const PREORDER_PRICE = 67
+const PREORDER_END_DATE = new Date('2026-12-01T00:00:00Z')
+const PREORDER_GOAL = 20
+const CURRENT_PREORDERS = 1
+const PREORDER_END_DATE_LABEL = new Intl.DateTimeFormat('en-US', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+}).format(PREORDER_END_DATE)
+
 function DiscordIcon({ className }: { className: string }) {
   return (
     <svg aria-hidden="true" className={className} viewBox="0 0 127.14 96.36" fill="currentColor">
@@ -139,36 +148,6 @@ export default function Home() {
             <a className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#152b25]/15 transition-colors hover:text-[#d96943]" href="https://discord.gg/m3gYtCge4x" target="_blank" rel="noreferrer" aria-label="Join the Jolt Discord">
               <DiscordIcon className="h-5 w-5" />
             </a>
-            <details className="group relative">
-              <summary className="inline-flex h-12 cursor-pointer list-none items-center rounded-full border border-[#152b25]/15 px-3 transition-colors hover:text-[#d96943]">
-                Links <span aria-hidden="true" className="text-xs">⌄</span>
-              </summary>
-              <div className="fixed left-4 right-4 top-[4.25rem] z-20 max-h-[calc(100vh-5rem)] overflow-y-auto rounded-2xl border border-[#152b25]/10 bg-[#f3f0e8] p-4 text-[#152b25] shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-3 sm:max-h-[70vh] sm:w-[min(90vw,28rem)] sm:p-5">
-                <div className="mb-4 grid grid-cols-2 gap-2 border-b border-[#152b25]/10 pb-4 text-sm font-bold sm:flex sm:gap-5">
-                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#story">The project</a>
-                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="blog/">Blog</a>
-                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#gallery">Customer photos</a>
-                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#faq">FAQ</a>
-                </div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  {resourceGroups.map((group) => (
-                    <div key={group.title}>
-                      <h2 className="mb-2 text-xs font-extrabold uppercase tracking-[0.12em]">{group.title}</h2>
-                      <ul className="space-y-2">
-                        {group.links.map(([label, href]) => (
-                          <li key={label}>
-                            <a className="inline-flex min-h-11 items-center text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
-                              {href.includes('discord.gg') && <DiscordIcon className="mr-2 h-4 w-4 shrink-0" />}
-                              {label}{href.startsWith('http') && <span aria-hidden="true"> ↗</span>}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </details>
             <a className="inline-flex h-12 items-center whitespace-nowrap rounded-full bg-[#d96943] px-3 text-xs text-white transition-colors hover:bg-[#bd5634] sm:px-4 sm:text-sm md:px-5" href="#preorder">Preorder</a>
           </div>
         </nav>
@@ -185,13 +164,13 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a className="rounded-full bg-[#152b25] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5" href="#preorder">
-              Get a preorder for $67<span aria-hidden="true">↗</span>
+              Get a preorder for ${PREORDER_PRICE}<span aria-hidden="true">↗</span>
             </a>
             <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="#story">
               What is Jolt?
             </a>
           </div>
-          <Countdown />
+          <Countdown deadline={PREORDER_END_DATE.getTime()} />
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#69776e]">
             Built for the LED Backlight Casio G-Shock DW-5600UE
           </p>
@@ -212,12 +191,15 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1fr_auto] md:items-center md:px-8 md:py-16">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#e8b94f]">Help make the next run happen</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">The goal: 20 preorders.</h2>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Preorders so far: 1 preorder.</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">The goal: {PREORDER_GOAL} preorders.</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Preorders so far: {CURRENT_PREORDERS}.</h2>
             <p className="mt-4 max-w-xl leading-7 text-white/75">
               I’m gathering interest for a batch of Jolt boards. Choose a payment option to get in touch about a preorder.
             </p>
-            <p className="mt-4 text-sm font-semibold text-[#e8b94f]">$67</p>
+            <p className="mt-4 text-sm font-semibold text-[#e8b94f]">${PREORDER_PRICE}</p>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-white/75">
+              Preorders close on {PREORDER_END_DATE_LABEL}. If the goal of {PREORDER_GOAL} preorders isn’t met by then, I’ll refund all preorders.
+            </p>
           </div>
           <div className="grid min-w-56 gap-3 sm:grid-cols-3 md:grid-cols-1">
             <a className="rounded-full bg-[#e8b94f] px-6 py-3 text-center text-sm font-extrabold text-[#152b25] transition-colors hover:bg-[#f2ce75]" href="https://venmo.com/u/David-Volovskiy" target="_blank" rel="noreferrer">

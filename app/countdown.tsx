@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react'
 
-const campaignDeadline = new Date('2026-12-01T00:00:00')
-
 type TimeRemaining = {
   days: number
   hours: number
@@ -11,8 +9,8 @@ type TimeRemaining = {
   seconds: number
 }
 
-function getTimeRemaining(): TimeRemaining {
-  const totalSeconds = Math.max(0, Math.floor((campaignDeadline.getTime() - Date.now()) / 1000))
+function getTimeRemaining(deadline: number): TimeRemaining {
+  const totalSeconds = Math.max(0, Math.floor((deadline - Date.now()) / 1000))
 
   return {
     days: Math.floor(totalSeconds / 86_400),
@@ -22,21 +20,24 @@ function getTimeRemaining(): TimeRemaining {
   }
 }
 
-export default function Countdown() {
-  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(getTimeRemaining)
+export default function Countdown({ deadline }: { deadline: number }) {
+  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(() => getTimeRemaining(deadline))
 
   useEffect(() => {
-    const updateCountdown = () => setTimeRemaining(getTimeRemaining())
+    const updateCountdown = () => setTimeRemaining(getTimeRemaining(deadline))
     updateCountdown()
     const intervalId = window.setInterval(updateCountdown, 1000)
 
     return () => window.clearInterval(intervalId)
-  }, [])
+  }, [deadline])
 
   return (
     <div className="mt-7" aria-label="Preorder campaign countdown">
       <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#69776e]">
-        Preorder campaign ends December 1, 2026
+        Preorder campaign ends {new Intl.DateTimeFormat('en-US', {
+          dateStyle: 'long',
+          timeZone: 'UTC',
+        }).format(deadline)}
       </p>
       <div className="mt-2 flex gap-3 tabular-nums sm:gap-4" aria-live="off">
         {([
