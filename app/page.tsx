@@ -83,6 +83,13 @@ const useCases = [
   }
 ]
 
+const galleryImages = [
+  { src: '/gallery/gal1.png' },
+  { src: '/gallery/gal2.png' },
+  { src: '/gallery/gal3.png' },
+  { src: '/contrast_imgs/fig07.png' },
+]
+
 const faqs = [
   {
     question: 'What is the Jolt?',
@@ -112,7 +119,7 @@ const faqs = [
   },
   {
     question: 'How is the screen contrast?',
-    answer: <>The stock LCD uses 4–4.5 V. The board’s microcontroller can’t safely go above 3.6 V. In my testing, the contrast is a bit lower and the display looks dimmer at certain angles, but it’s not an issue in normal room brightness or at the most common viewing angles.<br /><br />If you’re concerned about the dimmer appearance, the board can be modified to use a higher voltage. I’ve used both 3.8 V and 4 V configurations in my personal watch for almost a year without issue, and I can make that modification for your watch.</>,
+    answer: <>The stock LCD uses 4–4.5 V. The board’s microcontroller can’t safely go above 3.6 V. In my testing, the contrast is a bit lower and the display looks dimmer at certain angles, but it’s not an issue in normal room brightness or at the most common viewing angles.<br /><br />If you’re concerned about the dimmer appearance, the board can be modified to use a higher voltage. I’ve used both 3.8 V and 4 V configurations in my personal watch for almost a year without issue, and I can make that modification for your watch. But it will be at your own risk.<br /><br />This is more discussed in my <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/contrast/">blog post</a>.</>,
   },
   {
     question: 'How do I flash new code onto the watch?',
@@ -292,6 +299,33 @@ export default function Home() {
               <div className="mt-3 max-w-3xl pr-8 leading-7 text-[#69776e]">{item.answer}</div>
             </details>
           ))}
+        </div>
+      </section>
+
+      <section id="gallery" className="bg-[#e9e5d9]">
+        <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">SHOW OFF THE WRIST-SHOT</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight">Customer photos</h2>
+            </div>
+            <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/n4RMYp8pT3" target="_blank" rel="noreferrer">
+              Share your Jolt photo ↗
+            </a>
+          </div>
+          <div className="mt-8 grid grid-cols-4 gap-3 sm:grid-cols-4 md:gap-5">
+            {galleryImages.map((image) => (
+              <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
+                <Image
+                  className="aspect-[4/5] w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+                  src={image.src}
+                  alt="Customer Photo"
+                  width={480}
+                  height={500}
+                />
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
