@@ -11,6 +11,10 @@ const PREORDER_PRICE = 67
 const PREORDER_END_DATE = new Date('2026-12-01T00:00:00Z')
 const PREORDER_GOAL = 20
 const CURRENT_PREORDERS = 1
+const PREORDER_PROGRESS_COUNT = Math.min(Math.max(CURRENT_PREORDERS, 0), PREORDER_GOAL)
+const PREORDER_PROGRESS_PERCENT = PREORDER_GOAL > 0
+  ? Math.round((PREORDER_PROGRESS_COUNT / PREORDER_GOAL) * 100)
+  : 0
 const PREORDER_END_DATE_LABEL = new Intl.DateTimeFormat('en-US', {
   dateStyle: 'long',
   timeZone: 'UTC',
@@ -192,7 +196,26 @@ export default function Home() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#e8b94f]">Help make the next run happen</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">The goal: {PREORDER_GOAL} preorders.</h2>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Preorders so far: {CURRENT_PREORDERS}.</h2>
+            <div className="mt-5 max-w-xl">
+              <div className="mb-2 flex justify-between text-xs font-bold text-white/75">
+                <span>{PREORDER_PROGRESS_COUNT} of {PREORDER_GOAL} preorders</span>
+                <span>{PREORDER_PROGRESS_PERCENT}%</span>
+              </div>
+              <div
+                className="h-3 overflow-hidden rounded-full bg-white/20"
+                role="progressbar"
+                aria-label="Preorder goal progress"
+                aria-valuemin={0}
+                aria-valuemax={PREORDER_GOAL}
+                aria-valuenow={PREORDER_PROGRESS_COUNT}
+                aria-valuetext={`${PREORDER_PROGRESS_PERCENT}% of preorder goal`}
+              >
+                <div
+                  className="h-full rounded-full bg-[#e8b94f] transition-[width]"
+                  style={{ width: `${PREORDER_PROGRESS_PERCENT}%` }}
+                />
+              </div>
+            </div>
             <p className="mt-4 max-w-xl leading-7 text-white/75">
               I’m gathering interest for a batch of Jolt boards. Choose a payment option to get in touch about a preorder.
             </p>
