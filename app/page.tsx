@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: 'Can I try out the watch\'s functions before I buy?',
-    answer: <>Yes! <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="simulator/index.html">here is a link to the Simulator</a>. You can use the arrow keys to press the buttons.<br /><br />Also, if you want to see what the G-Shock screen can display, there's also a <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="playground/">Playground</a> that allows you to type in characters and see how the LCD will show them.</>,
+    answer: <>Yes! <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="simulator/index.html">here is a link to the Simulator</a>. You can use the arrow keys to press the buttons.<br /><br />Also, if you want to see what the G-Shock screen can display, there&apos;s also a <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="playground/">Playground</a> that allows you to type in characters and see how the LCD will show them.</>,
   },
 ]
 
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
             </div>
             <p className="mt-4 max-w-xl leading-7 text-white/75">
-              <strong>How to preorder:</strong> Use one of the options to the right and send <strong>${PREORDER_PRICE}</strong> with a message about your name, contact info, and address. Once the goal is met, I'll reach out to you with the expected time of delivery and any other needed shipping info.
+              <strong>How to preorder:</strong> Use one of the options to the right and send <strong>${PREORDER_PRICE}</strong> with a message about your name, contact info, and address. Once the goal is met, I&apos;ll reach out to you with the expected time of delivery and any other needed shipping info.
             </p>
 
             <div className="mt-5 inline-flex items-baseline gap-3 rounded-2xl border border-[#e8b94f]/40 bg-[#e8b94f]/10 px-5 py-3">
@@ -260,17 +260,17 @@ export default function Home() {
           <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#69776e]">The Jolt board</p>
         </div>
         <div className="order-1 md:order-2">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Tinkerer's paradise in a sleeper watch.</p>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Tinkerer&apos;s paradise in a sleeper watch.</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">About the Jolt.</h2>
           <p className="mt-5 leading-7 text-[#43564d]">
             Jolt is a circuit board that allows you to customize your G-Shock. It replaces the original DW-5600UE board with a programmable, ARM Cortex M0+ board. You can build new watch faces and features. Or use the built-in USB port to to install new functions made from others in the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://github.com/voloved/second-movement/tree/jolt">open-source codebase</a>.
           </p>
           <p className="mt-5 leading-7 text-[#43564d]">
-            Because the only thing that is being changed is the circuit board, you'll retain the drop and water resistance of your G-Shock. Making this the most indestructible device you'll own that can play Wordle.
+            Because the only thing that is being changed is the circuit board, you&apos;ll retain the drop and water resistance of your G-Shock. Making this the most indestructible device you&apos;ll own that can play Wordle.
           </p>
 
           <p className="mt-4 leading-7 text-[#43564d]">
-            This project is forked off of <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.joeycastillo.com/">Joey Castillo's</a> project for the F91W, called the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.sensorwatch.net/">Sensor Watch</a>. The Sensor Watch is nearly the same as this project, but uses an F91W instead of a G-SHock. I originally used that watch, but found that the F91W broke too often from repeated button presses caused by the higher functionality and I also wanted a watch i can drop and one with an extra button.
+            This project is forked off of <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.joeycastillo.com/">Joey Castillo&apos;s</a> project for the F91W, called the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://www.sensorwatch.net/">Sensor Watch</a>. The Sensor Watch is nearly the same as this project, but uses an F91W instead of a G-SHock. I originally used that watch, but found that the F91W broke too often from repeated button presses caused by the higher functionality and I also wanted a watch i can drop and one with an extra button.
           </p>
 
 

@@ -240,7 +240,7 @@ export default function ContrastPost() {
               <tbody>
                 <tr className="border-b border-[#152b25]/10">
                   <td className="px-3 py-3">3.6 V</td>
-                  <td className="px-3 py-3">Don't populate</td>
+                  <td className="px-3 py-3">Don&apos;t populate</td>
                   <td className="px-3 py-3">-</td>
                 </tr>
                 <tr className="border-b border-[#152b25]/10">
