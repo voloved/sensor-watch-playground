@@ -160,16 +160,16 @@ export default function Home() {
 
       <section id="top" className="relative mx-auto grid max-w-6xl items-center gap-8 px-5 pb-16 pt-12 md:grid-cols-[1fr_1.05fr] md:px-8 md:pb-24 md:pt-20">
         <div className="relative z-[1]">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">A new heartbeat for a classic</p>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Making the classic a bit smarter</p>
           <h1 className="max-w-xl text-5xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl md:text-7xl">
-            Your G-Shock.<br />Your rules.
+            Your G-Shock.<br />Made hackable.
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-8 text-[#43564d]">
-            Jolt is a custom circuit board that makes the classic DW-5600 programmable. Keep the watch you love. Make it do more.
+            Jolt is a custom circuit board that makes the classic DW-5600UE programmable. Write your own functions or install new ones through its USB port.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a className="rounded-full bg-[#152b25] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5" href="#preorder">
-              Get on the preorder list <span aria-hidden="true">↗</span>
+              Get a preorder for $67<span aria-hidden="true">↗</span>
             </a>
             <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="#story">
               What is Jolt?
@@ -223,17 +223,20 @@ export default function Home() {
           <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#69776e]">The Jolt board</p>
         </div>
         <div className="order-1 md:order-2">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Small board. Big possibilities.</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">A familiar watch, with room to experiment.</h2>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Tinkerer's paradise in a sleeper watch.</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">About the Jolt.</h2>
           <p className="mt-5 leading-7 text-[#43564d]">
-            Jolt replaces the original DW-5600 board with a programmable, ARM-based Sensor Watch board. Build new watch faces and features, then see them on the wrist you already know.
+            Jolt is a circuit board that allows you to customize your G-Shock. It replaces the original DW-5600UE board with a programmable, ARM Cortex M0+ board. You can build new watch faces and features. Or use the built-in USB port to to install new functions made from others in the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="https://github.com/voloved/second-movement/tree/jolt">open-source codebase</a>.
+          </p>
+          <p className="mt-5 leading-7 text-[#43564d]">
+            Because the only thing that is being changed is the circuit board, you'll retain the drop and water resistance of your G-Shock. Making this the most indestructible device you'll own that can play Wordle.
+          </p>
+          <p className="mt-5 leading-7 text-[#43564d]">
+            The first batch of the Jolt boards were sold in August 2026 to 20 customers. It sold out in a few months.
           </p>
           <p className="mt-4 leading-7 text-[#43564d]">
-            I made the display playground and simulator to make developing for the watch easier—no firmware flash needed just to try an idea.
+            Before you buy, try out the default features in the <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="simulator/index.html">Simulator</a>.
           </p>
-          <a className="mt-6 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="https://github.com/voloved/second-movement/tree/jolt" target="_blank" rel="noreferrer">
-            Explore the Jolt firmware <span aria-hidden="true" className="ml-2">↗</span>
-          </a>
         </div>
 
         <div className="order-3 grid gap-5 sm:grid-cols-2 md:col-span-2 md:gap-6">
@@ -287,7 +290,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">SHOW OFF THE WRIST-SHOT</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Show off your wrist shot</p>
               <h2 className="mt-2 text-3xl font-black tracking-tight">Customer photos</h2>
             </div>
             <a className="text-sm font-bold underline decoration-[#d96943] decoration-2 underline-offset-4 hover:text-[#bd5634]" href="https://discord.gg/n4RMYp8pT3" target="_blank" rel="noreferrer">
