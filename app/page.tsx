@@ -220,6 +220,11 @@ export default function Home() {
             <p className="mt-4 max-w-xl leading-7 text-white/75">
               <strong>How to preorder:</strong> Use one of the options to the right and send <strong>${PREORDER_PRICE}</strong> with a message about your name, contact info, and address. Once the goal is met, I'll reach out to you with the expected time of delivery and any other needed shipping info.
             </p>
+
+            <div className="mt-5 inline-flex items-baseline gap-3 rounded-2xl border border-[#e8b94f]/40 bg-[#e8b94f]/10 px-5 py-3">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#e8b94f]">Preorder price</span>
+              <span className="text-4xl font-black leading-none tracking-tight text-[#f2ce75]">${PREORDER_PRICE}</span>
+            </div>
             <div className="mt-3 max-w-xl text-sm leading-6 text-white/75">
               <p>Questions? Contact me:</p>
               <ul className="mt-1 list-disc pl-5">
@@ -230,11 +235,6 @@ export default function Home() {
                   Email: <a className="font-semibold underline underline-offset-4 hover:text-[#f2ce75]" href="mailto:devolov.jolt@gmail.com">devolov.jolt@gmail.com</a>
                 </li>
               </ul>
-            </div>
-
-            <div className="mt-5 inline-flex items-baseline gap-3 rounded-2xl border border-[#e8b94f]/40 bg-[#e8b94f]/10 px-5 py-3">
-              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#e8b94f]">Preorder price</span>
-              <span className="text-4xl font-black leading-none tracking-tight text-[#f2ce75]">${PREORDER_PRICE}</span>
             </div>
             <p className="mt-3 max-w-xl text-sm leading-6 text-white/75">
               Preorders close on <strong>{PREORDER_END_DATE_LABEL}</strong>. If the goal of {PREORDER_GOAL} preorders isn’t met by then, I’ll refund all preorders.
