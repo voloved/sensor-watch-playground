@@ -219,7 +219,10 @@ export default function Home() {
             <p className="mt-4 max-w-xl leading-7 text-white/75">
               I’m gathering interest for a batch of Jolt boards. Choose a payment option to get in touch about a preorder.
             </p>
-            <p className="mt-4 text-sm font-semibold text-[#e8b94f]">${PREORDER_PRICE}</p>
+            <div className="mt-5 inline-flex items-baseline gap-3 rounded-2xl border border-[#e8b94f]/40 bg-[#e8b94f]/10 px-5 py-3">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#e8b94f]">Preorder price</span>
+              <span className="text-4xl font-black leading-none tracking-tight text-[#f2ce75]">${PREORDER_PRICE}</span>
+            </div>
             <p className="mt-3 max-w-xl text-sm leading-6 text-white/75">
               Preorders close on {PREORDER_END_DATE_LABEL}. If the goal of {PREORDER_GOAL} preorders isn’t met by then, I’ll refund all preorders.
             </p>
