@@ -20,27 +20,6 @@ const resourceGroups = [
       ['Jolt firmware releases', 'https://github.com/voloved/second-movement/releases'],
     ],
   },
-  {
-    title: 'Sensor Watch projects',
-    links: [
-      ['Step Counter', 'https://github.com/joeycastillo/second-movement/pull/191'],
-      ['Wordle', 'https://github.com/joeycastillo/Sensor-Watch/pull/436'],
-      ['Endless Runner Game', 'https://github.com/joeycastillo/Sensor-Watch/pull/419'],
-    ],
-  },
-  {
-    title: 'ROM hacks',
-    links: [
-      ['Pokémon Emerald fork', 'https://github.com/voloved/pokeemerald_fork'],
-      ['Pokémon Crystal GBA fork', 'https://github.com/voloved/crystaldust_fork'],
-      ['Pokémon Red++ fork', 'https://github.com/voloved/rpp_v3_fork'],
-      ['Unovared', 'https://github.com/voloved/unovared'],
-      ['Cycle balls in the last-used menu', 'https://github.com/rh-hideout/pokeemerald-expansion/pull/3039'],
-      ['Sort the bag in Pokémon Red', 'https://github.com/pret/pokered/wiki/Add-Item-Sorting-In-Bag'],
-      ['Keep cut trees cleared in Pokémon Red', 'https://github.com/pret/pokered/wiki/All-Trees-Permanently-Get-Cut'],
-      ['Add Thief Ball to Pokémon Emerald', 'https://github.com/pret/pokeemerald/wiki/Add-Thief-Ball'],
-    ],
-  },
 ]
 
 const useCases = [
@@ -337,11 +316,11 @@ export default function Home() {
             <h2 className="mt-2 text-3xl font-black tracking-tight">Project links</h2>
           </div>
         </div>
-        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8">
           {resourceGroups.map((group) => (
             <div key={group.title}>
               <h3 className="mb-3 text-sm font-extrabold uppercase tracking-[0.12em]">{group.title}</h3>
-              <ul className="space-y-2.5">
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-3">
                 {group.links.map(([label, href]) => (
                   <li key={label}>
                     <a className="text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 transition-colors hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
