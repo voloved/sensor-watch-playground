@@ -109,8 +109,8 @@ const faqs = [
     answer: 'The circuit board connects to your computer for updating the software with a micro-USB connector. The board is 0.4mm in thickness, which is thinner than your standard micro-USB connector. To get the board to fit, squeeze that opening of a micro-USB connector you don\'t care about together a bit with pliers or side-cutters.',
   },
   {
-    question: 'How can I try the display and firmware?',
-    answer: 'Use the display playground and watch simulator from the Links menu to explore the project. The playground can show what kind of text you can display on the G-Shock. Thesimulator allows you to test out how the watch functions before you buy.',
+    question: 'Can I try out the watch\'s functions before I buy?',
+    answer: <>Yes! <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="simulator/index.html">here is a link to the Simulator</a>. You can use the arrow keys to press the buttons.<br /><br />Also, if you want to see what the G-Shock screen can display, there's also a <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="playground/">Playground</a> that allows you to type in characters and see how the LCD will show them.</>,
   },
 ]
 
@@ -121,8 +121,9 @@ export default function Home() {
         <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-5 sm:px-5 sm:py-4 md:px-8">
           <a className="shrink-0 text-base font-black tracking-[0.14em] sm:text-lg sm:tracking-[0.18em]" href="#top">JOLT<span className="text-[#d96943]">.</span></a>
           <div className="flex items-center gap-2 text-sm font-semibold sm:gap-4 md:gap-7">
-            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="#story">The project</a>
             <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="blog/">Blog</a>
+            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="simulator/index.html">Simulator</a>
+            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="playground/">Playground</a>
             <details className="group relative">
               <summary className="inline-flex h-12 cursor-pointer list-none items-center rounded-full border border-[#152b25]/15 px-3 transition-colors hover:text-[#d96943]">
                 Links <span aria-hidden="true" className="text-xs">⌄</span>
@@ -131,7 +132,7 @@ export default function Home() {
                 <div className="mb-4 grid grid-cols-2 gap-2 border-b border-[#152b25]/10 pb-4 text-sm font-bold sm:flex sm:gap-5">
                   <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#story">The project</a>
                   <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="blog/">Blog</a>
-                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#gallery">Community gallery</a>
+                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#gallery">Customer photos</a>
                   <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#faq">FAQ</a>
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">

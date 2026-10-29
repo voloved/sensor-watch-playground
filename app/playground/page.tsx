@@ -266,6 +266,9 @@ function About() {
       to display legible information. The live preview on this page facilitates this process,
       and avoids having to compile and load a new firmware just to test things out.
     </p>
+    <p>
+      This codebase was forked from the great work done by {' '}<Link href="https://github.com/hchargois/sensor-watch-playground">hchargois</Link>.
+    </p>
     <h2 className="font-bold mt-4">Links</h2>
     <ul className="list-disc list-inside">
       <li><Link href="https://github.com/voloved/sensor-watch-playground">Source code of this page (GitHub)</Link></li>
