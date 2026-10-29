@@ -177,7 +177,7 @@ export default function Home() {
           </div>
           <Countdown />
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#69776e]">
-            Built for the Casio G-Shock DW-5600
+            Built for the LED Backlight Casio G-Shock DW-5600UE
           </p>
         </div>
         <div className="relative mx-auto w-full max-w-[400px]">

@@ -103,7 +103,7 @@ export default function ContrastPost() {
           </p>
 
           <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
-            3.4 volts
+            3.4 volts - The Failed First Attempt
           </h1>
 
           <Figure
@@ -125,7 +125,9 @@ export default function ContrastPost() {
           <p>
             Once I had the watch running at 3.6 V, I retested the contrast and it was better. I still wanted to know whether it could be pushed further.
           </p>
-
+          <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
+            3.6 volts - What Will Come Stock 
+          </h1>
           <FigurePair>
             <Figure
               src="/contrast_imgs/fig05.png"
@@ -142,9 +144,6 @@ export default function ContrastPost() {
           <p>
             To give an example of the difference in viewing angle, here&apos;s a picture of the watch at 3.6V from a member in the community. The poor contrast goes away at most angles aside from head-on.
           </p>
-          <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
-            3.6 volts
-          </h1>
           <FigurePair>
             <Figure
               src="/contrast_imgs/fig07.png"
@@ -206,6 +205,69 @@ export default function ContrastPost() {
             </p>
           </aside>
         </div>
+
+        <section className="mt-12" aria-labelledby="lcd-voltage-heading">
+          <h2 id="lcd-voltage-heading" className="text-2xl font-black leading-tight tracking-tight">
+            How to change the LCD Voltage
+          </h2>
+          <div className="mt-5 space-y-6 text-base leading-8 text-[#43564d] [&_p]:indent-8">
+            <p>
+              For those of you who want to change the LCD voltage for a better contrast, you just need to solder an 0805 resistor on the R9 pad. Use the table below to find what resistor to use for each voltage. I have only went up to 4.0V for my daily wearer, and going to any voltage above 3.6V is a risk to the watch.
+            </p>
+            <Figure
+              src="/contrast_imgs/fig13.png"
+              alt="Location of R9 on the board"
+              caption="Fig. 13. Location of R9 on the board."
+            />
+          </div>
+
+          <div className="mt-5 overflow-x-auto">
+            <table className="w-full border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-[#152b25]/20">
+                  <th scope="col" className="px-3 py-3 font-extrabold">Voltage</th>
+                  <th scope="col" className="px-3 py-3 font-extrabold">Resistor for R9</th>
+                  <th scope="col" className="px-3 py-3 font-extrabold">Suggested part</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">3.6 V</td>
+                  <td className="px-3 py-3">Don't populate</td>
+                  <td className="px-3 py-3">-</td>
+                </tr>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">3.8 V</td>
+                  <td className="px-3 py-3">68K</td>
+                  <td className="px-3 py-3">
+                    <a className="underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT68K0/1760455" target="_blank" rel="noreferrer">RMCF0805FT68K0</a>
+                  </td>
+                </tr>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">4.0 V</td>
+                  <td className="px-3 py-3">41.2K</td>
+                  <td className="px-3 py-3">
+                    <a className="underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href="https://www.digikey.com/en/products/detail/panasonic-industry/ERA-6AEB4122V/2025808" target="_blank" rel="noreferrer">ERA-6AEB4122V</a>
+                  </td>
+                </tr>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">4.3 V</td>
+                  <td className="px-3 py-3">28.7K</td>
+                  <td className="px-3 py-3">
+                    <a className="underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href="https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/RM10F2872CT/26902824" target="_blank" rel="noreferrer">RM10F2872CT</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-3">4.5 V</td>
+                  <td className="px-3 py-3">16K</td>
+                  <td className="px-3 py-3">
+                    <a className="underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href="https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/RM10F1602CT/26864142" target="_blank" rel="noreferrer">RM10F1602CT</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
         <footer className="mt-12 border-t border-[#152b25]/15 pt-6">
           <a className="font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="../">
