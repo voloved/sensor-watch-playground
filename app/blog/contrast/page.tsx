@@ -58,7 +58,7 @@ function FigurePair({ children }: { children: React.ReactNode }) {
   return <div className="grid gap-4 sm:grid-cols-2">{children}</div>
 }
 
-export default function ContrastAndVoltagePost() {
+export default function ContrastPost() {
   return (
     <main className="min-h-screen bg-[#f3f0e8] text-[#152b25]">
       <header className="border-b border-[#152b25]/10">
@@ -82,7 +82,7 @@ export default function ContrastAndVoltagePost() {
           <time className="mt-3 block text-sm text-[#69776e]" dateTime="2026-10-28">Posted October 28, 2026</time>
         </header>
 
-        <div className="mt-10 space-y-6 text-base leading-8 text-[#43564d]">
+        <div className="mt-10 space-y-6 text-base leading-8 text-[#43564d] [&_p]:indent-8">
           <p>
             When making the Jolt, one of my largest goals was to offer compatibility with the Sensorwatch codebase, which was made for the SAML22 chipset. I know that the F91W only needs 3V for its LCD, and from Googling around, it seems that the G-Shock uses a display that needs 4 to 4.5V. The SAML22 has a max output of 3.4V. While that’s a distance from 4V, it’s still worth testing how the contrast may look on the G-Shock display. As a first attempt, I soldered a SEG and COM pins on the original Sensorwatch to a COM and SEG pin of the original G-Shock PCB. You can see the result in Fig. 1 and the waveform of the SEG in Fig. 2. That pixel was enough for me to be comfortable to keep going.
           </p>
@@ -101,6 +101,10 @@ export default function ContrastAndVoltagePost() {
           <p>
             After developing an alpha board, I was finally able to get the LCD working to see how well the contrast would actually be. And it was more disappointing than what I expected from Fig 1. It turns out that while the F91W uses a ⅓ duty on the LCD waveform, the G-SHock uses a ¼ duty. That may lead to a lower RMS voltage on any of the pins, leading to a dimmer LCD segment. Fig 3. Shows what it looks like at 3.4V. Not great.
           </p>
+
+          <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
+            3.4 volts
+          </h1>
 
           <Figure
             src="/contrast_imgs/fig03.png"
@@ -136,9 +140,11 @@ export default function ContrastAndVoltagePost() {
           </FigurePair>
 
           <p>
-            To give an example of the difference in viewing angle, here's a picture of the watch at 3.6V from a member in the community. The poor contrast goes away at most angles aside from head-on.
+            To give an example of the difference in viewing angle, here&apos;s a picture of the watch at 3.6V from a member in the community. The poor contrast goes away at most angles aside from head-on.
           </p>
-
+          <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
+            3.6 volts
+          </h1>
           <FigurePair>
             <Figure
               src="/contrast_imgs/fig07.png"
@@ -159,6 +165,10 @@ export default function ContrastAndVoltagePost() {
             I decided to just bite the bullet and run my personal board at 3.8V for four months. I saw no issues. After that, I boosted the voltage to 4V. That’s the voltage I am currently using on my own watch and still am not seeing issues. It can be possible to find the Mean Time To Failure (MTTF), but it would require many boards running at higher voltages and elevated temperatures.
           </p>
 
+          <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
+            3.8 volts
+          </h1>
+
           <FigurePair>
             <Figure
               src="/contrast_imgs/fig09.png"
@@ -171,6 +181,10 @@ export default function ContrastAndVoltagePost() {
               caption="Fig. 8. LCD at 3.8 V"
             />
           </FigurePair>
+
+          <h1 className="mt-3 text-2xl font-black leading-tight tracking-tight">
+            4.0 volts
+          </h1>
 
           <FigurePair>
             <Figure
