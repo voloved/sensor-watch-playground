@@ -139,20 +139,21 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f3f0e8] text-[#152b25]">
       <header className="sticky top-0 z-10 border-b border-[#152b25]/10 bg-[#f3f0e8]/95 backdrop-blur">
-        <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-5 py-4 md:px-8">
-          <a className="shrink-0 text-lg font-black tracking-[0.18em]" href="#top">JOLT<span className="text-[#d96943]">.</span></a>
-          <div className="flex items-center gap-4 text-sm font-semibold md:gap-7">
+        <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-5 sm:px-5 sm:py-4 md:px-8">
+          <a className="shrink-0 text-base font-black tracking-[0.14em] sm:text-lg sm:tracking-[0.18em]" href="#top">JOLT<span className="text-[#d96943]">.</span></a>
+          <div className="flex items-center gap-2 text-sm font-semibold sm:gap-4 md:gap-7">
             <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="#story">The project</a>
-            <a className="transition-colors hover:text-[#d96943]" href="blog/">Blog</a>
+            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="blog/">Blog</a>
             <details className="group relative">
-              <summary className="cursor-pointer list-none transition-colors hover:text-[#d96943]">
+              <summary className="inline-flex h-12 cursor-pointer list-none items-center rounded-full border border-[#152b25]/15 px-3 transition-colors hover:text-[#d96943]">
                 Links <span aria-hidden="true" className="text-xs">⌄</span>
               </summary>
-              <div className="absolute right-0 top-full z-20 mt-3 max-h-[70vh] w-[min(90vw,28rem)] overflow-y-auto rounded-2xl border border-[#152b25]/10 bg-[#f3f0e8] p-5 text-[#152b25] shadow-xl">
-                <div className="mb-5 flex gap-5 border-b border-[#152b25]/10 pb-4 text-sm font-bold">
-                  <a className="hover:text-[#bd5634]" href="#gallery">Community gallery</a>
-                  <a className="hover:text-[#bd5634]" href="#faq">FAQ</a>
-                  <a className="hover:text-[#bd5634]" href="blog/">Blog</a>
+              <div className="fixed left-4 right-4 top-[4.25rem] z-20 max-h-[calc(100vh-5rem)] overflow-y-auto rounded-2xl border border-[#152b25]/10 bg-[#f3f0e8] p-4 text-[#152b25] shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-3 sm:max-h-[70vh] sm:w-[min(90vw,28rem)] sm:p-5">
+                <div className="mb-4 grid grid-cols-2 gap-2 border-b border-[#152b25]/10 pb-4 text-sm font-bold sm:flex sm:gap-5">
+                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#story">The project</a>
+                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="blog/">Blog</a>
+                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#gallery">Community gallery</a>
+                  <a className="inline-flex min-h-11 items-center hover:text-[#bd5634]" href="#faq">FAQ</a>
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   {resourceGroups.map((group) => (
@@ -161,7 +162,7 @@ export default function Home() {
                       <ul className="space-y-2">
                         {group.links.map(([label, href]) => (
                           <li key={label}>
-                            <a className="text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
+                            <a className="inline-flex min-h-11 items-center text-sm text-[#43564d] underline decoration-[#152b25]/20 underline-offset-4 hover:text-[#bd5634] hover:decoration-[#bd5634]" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
                               {label}{href.startsWith('http') && <span aria-hidden="true"> ↗</span>}
                             </a>
                           </li>
@@ -172,7 +173,7 @@ export default function Home() {
                 </div>
               </div>
             </details>
-            <a className="rounded-full bg-[#d96943] px-4 py-2 text-white transition-colors hover:bg-[#bd5634] md:px-5" href="#preorder">Preorder</a>
+            <a className="inline-flex h-12 items-center whitespace-nowrap rounded-full bg-[#d96943] px-3 text-xs text-white transition-colors hover:bg-[#bd5634] sm:px-4 sm:text-sm md:px-5" href="#preorder">Preorder</a>
           </div>
         </nav>
       </header>
@@ -313,7 +314,7 @@ export default function Home() {
               Share your Jolt photo ↗
             </a>
           </div>
-          <div className="mt-8 grid grid-cols-4 gap-3 sm:grid-cols-4 md:gap-5">
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
             {galleryImages.map((image) => (
               <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
                 <Image
