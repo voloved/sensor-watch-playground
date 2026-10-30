@@ -30,7 +30,7 @@ export default function BlogPage() {
               <a className="hover:text-[#bd5634]" href="battery-life/">Battery life calculations</a>
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-[#69776e]">
-              Estimating the Jolt's battery life and how different usages affect it.
+              Estimating the Jolt&apos;s battery life and how different usages affect it.
             </p>
             <a className="mt-5 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="battery-life/">
               Read the post <span aria-hidden="true" className="ml-2">↗</span>

@@ -122,7 +122,7 @@ const faqs = [
   },
   {
     question: 'How long does the battery last?',
-    answer: <>This watch uses 8μA in normal cases. That is around 1 year and 3 months off a CR2016 battery. The battery life can be up to 3 years if you leave the watch in sleep-mode, where steps aren't counted and the seconds don’t update.<br /><br />This is more discussed in <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/battery-life/">this blog post</a>.</>,
+    answer: <>This watch uses 8μA in normal cases. That is around 1 year and 3 months off a CR2016 battery. The battery life can be up to 3 years if you leave the watch in sleep-mode, where steps aren&apos;t counted and the seconds don’t update.<br /><br />This is more discussed in <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/battery-life/">this blog post</a>.</>,
   },
   {
     question: 'How is the screen contrast?',
