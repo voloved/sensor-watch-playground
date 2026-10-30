@@ -20,6 +20,12 @@ const PREORDER_END_DATE_LABEL = new Intl.DateTimeFormat('en-US', {
   timeZone: 'UTC',
 }).format(PREORDER_END_DATE)
 
+const mainNavigationLinks = [
+  { label: 'Blog', href: 'blog/' },
+  { label: 'Simulator', href: 'simulator/index.html' },
+  { label: 'Playground', href: 'playground/' },
+]
+
 function DiscordIcon({ className }: { className: string }) {
   return (
     <svg aria-hidden="true" className={className} viewBox="0 0 127.14 96.36" fill="currentColor">
@@ -86,7 +92,7 @@ const useCases = [
 const galleryImages = [
   { src: '/gallery/gal1.png' },
   { src: '/gallery/gal4.png' },
-  { src: '/contrast_imgs/fig07.png' },
+  { src: '/contrast/fig07.png' },
   { src: '/gallery/gal6.png' },
   { src: '/gallery/gal5.png' },
 ]
@@ -147,9 +153,25 @@ export default function Home() {
         <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-5 sm:px-5 sm:py-4 md:px-8">
           <a className="shrink-0 text-base font-black tracking-[0.14em] sm:text-lg sm:tracking-[0.18em]" href="#top">JOLT<span className="text-[#d96943]">.</span></a>
           <div className="flex items-center gap-2 text-sm font-semibold sm:gap-4 md:gap-7">
-            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="blog/">Blog</a>
-            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="simulator/index.html">Simulator</a>
-            <a className="hidden transition-colors hover:text-[#d96943] sm:inline" href="playground/">Playground</a>
+            {mainNavigationLinks.map(({ label, href }) => (
+              <a key={label} className="hidden transition-colors hover:text-[#d96943] md:inline" href={href}>
+                {label}
+              </a>
+            ))}
+            <details className="relative md:hidden">
+              <summary aria-label="Open navigation menu" className="inline-flex h-12 w-12 cursor-pointer list-none items-center justify-center rounded-full border border-[#152b25]/15 transition-colors hover:text-[#d96943]">
+                <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </summary>
+              <div className="absolute right-0 top-full z-20 mt-2 grid min-w-40 gap-1 rounded-2xl border border-[#152b25]/10 bg-[#f3f0e8] p-2 text-[#152b25] shadow-xl">
+                {mainNavigationLinks.map(({ label, href }) => (
+                  <a key={label} className="inline-flex min-h-11 items-center rounded-xl px-3 hover:bg-[#e9e5d9] hover:text-[#bd5634]" href={href}>
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </details>
             <a className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#152b25]/15 transition-colors hover:text-[#d96943]" href="https://discord.gg/m3gYtCge4x" target="_blank" rel="noreferrer" aria-label="Join the Jolt Discord">
               <DiscordIcon className="h-5 w-5" />
             </a>

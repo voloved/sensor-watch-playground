@@ -93,12 +93,12 @@ export default function ContrastPost() {
           </p>
 
           <Figure
-            src="/contrast_imgs/fig01.png"
+            src="/contrast/fig01.png"
             alt="A G-Shock LCD pixel illuminated using Sensor Watch hardware"
             caption="Fig. 1. Turning on a G-Shock pixel with the Sensor Watch."
           />
           <Figure
-            src="/contrast_imgs/fig02.png"
+            src="/contrast/fig02.png"
             alt="Oscilloscope capture of the Sensor Watch segment waveform"
             caption="Fig. 2. Waveform from the Sensor Watch."
           />
@@ -112,7 +112,7 @@ export default function ContrastPost() {
           </h1>
 
           <Figure
-            src="/contrast_imgs/fig03.png"
+            src="/contrast/fig03.png"
             alt="Fig 3. LCD at 3.4V"
             caption="Fig 3. LCD at 3.4V"
           />
@@ -135,12 +135,12 @@ export default function ContrastPost() {
           </h1>
           <FigurePair>
             <Figure
-              src="/contrast_imgs/fig05.png"
+              src="/contrast/fig05.png"
               alt="G-Shock LCD at 3.6 volts, photographed at an oblique angle"
               caption="Fig. 5. LCD at 3.6 V, head-on"
             />
             <Figure
-              src="/contrast_imgs/fig06.png"
+              src="/contrast/fig06.png"
               alt="G-Shock LCD at 3.6 volts from another viewing angle"
               caption="Fig. 6. LCD at 3.6 V, head-on."
             />
@@ -151,12 +151,12 @@ export default function ContrastPost() {
           </p>
           <FigurePair>
             <Figure
-              src="/contrast_imgs/fig07.png"
+              src="/contrast/fig07.png"
               alt="G-Shock LCD at 3.6 volts, photographed at an oblique angle"
               caption="Fig. 7. LCD at 3.6 V, side view."
             />
             <Figure
-              src="/contrast_imgs/fig08.png"
+              src="/contrast/fig08.png"
               alt="G-Shock LCD at 3.6 volts from another viewing angle"
               caption="Fig. 8. LCD at 3.6 V, head-on."
             />
@@ -175,12 +175,12 @@ export default function ContrastPost() {
 
           <FigurePair>
             <Figure
-              src="/contrast_imgs/fig09.png"
+              src="/contrast/fig09.png"
               alt="G-Shock LCD running at 3.8 volts"
               caption="Fig. 7. LCD at 3.8 V."
             />
             <Figure
-              src="/contrast_imgs/fig10.png"
+              src="/contrast/fig10.png"
               alt="G-Shock LCD at 3.8 volts from another angle"
               caption="Fig. 8. LCD at 3.8 V"
             />
@@ -192,12 +192,12 @@ export default function ContrastPost() {
 
           <FigurePair>
             <Figure
-              src="/contrast_imgs/fig11.png"
+              src="/contrast/fig11.png"
               alt="G-Shock LCD running at 4 volts"
               caption="Fig. 9. LCD at 4 V"
             />
             <Figure
-              src="/contrast_imgs/fig12.png"
+              src="/contrast/fig12.png"
               alt="G-Shock LCD at 4 volts from another angle"
               caption="Fig. 10. LCD at 4 V"
             />
@@ -222,7 +222,7 @@ export default function ContrastPost() {
               For those of you who want to change the LCD voltage for a better contrast, you just need to solder an 0805 resistor on the R9 pad. Use the table below to find what resistor to use for each voltage. I have only went up to 4.0V for my daily wearer, and going to any voltage above 3.6V is a risk to the watch.
             </p>
             <Figure
-              src="/contrast_imgs/fig13.png"
+              src="/contrast/fig13.png"
               alt="Location of R9 on the board"
               caption="Fig. 13. Location of R9 on the board."
             />
