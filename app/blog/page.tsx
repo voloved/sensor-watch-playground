@@ -19,8 +19,24 @@ export default function BlogPage() {
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#bd5634]">Notes from the workbench</p>
         <h1 className="mt-3 text-5xl font-black tracking-tight sm:text-6xl">Jolt Blog</h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-[#43564d]">
-          Experiments, practical notes, and updates about making the classic DW-5600 programmable.
+          Testing done along the way while making the Jolt.
         </p>
+
+        <div className="mt-12 border-t border-[#152b25]/15">
+          <article className="border-b border-[#152b25]/15 py-8">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#bd5634]">Power · Hardware</p>
+            <time className="mt-2 block text-sm text-[#69776e]" dateTime="2026-10-28">October 30, 2026</time>
+            <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
+              <a className="hover:text-[#bd5634]" href="battery-life/">Battery life calculations</a>
+            </h2>
+            <p className="mt-3 max-w-2xl leading-7 text-[#69776e]">
+              Estimating the Jolt's battery life and how different usages affect it.
+            </p>
+            <a className="mt-5 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="battery-life/">
+              Read the post <span aria-hidden="true" className="ml-2">↗</span>
+            </a>
+          </article>
+        </div>
 
         <div className="mt-12 border-t border-[#152b25]/15">
           <article className="border-b border-[#152b25]/15 py-8">
@@ -30,7 +46,7 @@ export default function BlogPage() {
               <a className="hover:text-[#bd5634]" href="contrast/">LCD contrast at different voltages</a>
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-[#69776e]">
-              What changes when the watch LCD runs at the board’s standard voltage versus a higher-voltage modification? A practical, qualitative comparison from my own watch.
+              Testing the contrast of the watch at different voltages and what is ideal with the trade-offs present.
             </p>
             <a className="mt-5 inline-flex font-bold text-[#bd5634] underline decoration-2 underline-offset-4 hover:text-[#152b25]" href="contrast/">
               Read the post <span aria-hidden="true" className="ml-2">↗</span>

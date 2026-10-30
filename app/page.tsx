@@ -122,11 +122,11 @@ const faqs = [
   },
   {
     question: 'How long does the battery last?',
-    answer: 'This watch uses 4-6uA in normal cases. That is around 2 years off a CR2016 battery. I definitely expect at least one year of battery. The batterty life will drop if the step counter is used.',
+    answer: <>This watch uses 8μA in normal cases. That is around 1 year and 3 months off a CR2016 battery. The battery life can be up to 3 years if you leave the watch in sleep-mode, where steps aren't counted and the seconds don’t update.<br /><br />This is more discussed in <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/battery-life/">this blog post</a>.</>,
   },
   {
     question: 'How is the screen contrast?',
-    answer: <>The stock LCD uses 4–4.5 V. The board’s microcontroller can’t safely go above 3.6 V. In my testing, the contrast is a bit lower and the display looks dimmer at certain angles, but it’s not an issue in normal room brightness or at the most common viewing angles.<br /><br />If you’re concerned about the dimmer appearance, the board can be modified to use a higher voltage. I’ve used both 3.8 V and 4 V configurations in my personal watch for almost a year without issue, and I can make that modification for your watch. But it will be at your own risk.<br /><br />This is more discussed in my <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/contrast/">blog post</a>.</>,
+    answer: <>The stock LCD uses 4–4.5 V. The board’s microcontroller can’t safely go above 3.6 V. In my testing, the contrast is a bit lower and the display looks dimmer at certain angles, but it’s not an issue in normal room brightness or at the most common viewing angles.<br /><br />If you’re concerned about the dimmer appearance, the board can be modified to use a higher voltage. I’ve used both 3.8 V and 4 V configurations in my personal watch for almost a year without issue, and I can make that modification for your watch. But it will be at your own risk.<br /><br />This is more discussed in <a className="font-semibold text-[#bd5634] underline underline-offset-4" href="blog/contrast/">this blog post</a>.</>,
   },
   {
     question: 'How do I install the board?',

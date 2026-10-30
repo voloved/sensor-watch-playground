@@ -6,6 +6,37 @@ export const metadata: Metadata = {
   description: 'A rough estimate of Jolt battery life and how usage affects it.',
 }
 
+function Figure({
+  src,
+  alt,
+  caption,
+  className = '',
+}: {
+  src: string
+  alt: string
+  caption: string
+  className?: string
+}) {
+  return (
+    <figure className={`overflow-hidden rounded-2xl bg-[#e9e5d9] ${className}`}>
+      <Image
+        className="mx-auto max-h-[34rem] w-full object-contain"
+        src={src}
+        alt={alt}
+        width={900}
+        height={700}
+      />
+      <figcaption className="px-4 py-3 text-center text-sm leading-6 text-[#69776e]">
+        {caption}
+      </figcaption>
+    </figure>
+  )
+}
+
+function FigurePair({ children }: { children: React.ReactNode }) {
+  return <div className="grid gap-4 sm:grid-cols-2">{children}</div>
+}
+
 export default function BatteryLifePost() {
   return (
     <main className="min-h-screen bg-[#f3f0e8] text-[#152b25]">
@@ -32,49 +63,68 @@ export default function BatteryLifePost() {
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
             Battery life calculations
           </h1>
-          <time className="mt-3 block text-sm text-[#69776e]" dateTime="2026-10-28">Posted October 28, 2026</time>
-          <p className="mt-5 text-lg leading-8 text-[#43564d]">
-            Jolt uses very little power in typical use. Here’s a rough estimate of what that could mean for a CR2016 battery.
-          </p>
+          <time className="mt-3 block text-sm text-[#69776e]" dateTime="2026-10-30">Posted October 30, 2026</time>
         </header>
 
-        <div className="mt-10 space-y-6 text-base leading-8 text-[#43564d]">
+        <div className="mt-10 space-y-6 text-base leading-8 text-[#43564d] [&_p]:indent-8">
           <p>
-            In normal cases, the watch uses about 4–6 µA. Based on that current draw, a CR2016 battery could last around two years. This is an estimate, not a guaranteed runtime: actual battery life depends on the battery, the watch, and how its features are used.
+            One of the large goals of the Jolt is a long battery life. Since it’s not a rechargeable unit, it would be wasteful and unfun to need to replace the battery often. The G-Shock comes stock with a Panasonic CR2016 battery, and the <a className="font-semibold text-[#bd5634] underline underline-offset-4 hover:text-[#152b25]" href="https://energy.panasonic.com/dam/master/pdf/en/datasheet/lithium/CR2016_Datasheet_EN.pdf" target="_blank" rel="noreferrer">datasheet</a> states it’s 90mAh, so calculations should be fairly easy to make if I know the average power draw of the Jolt.
+          </p>
+          <p>
+            There are four ways the watch is used that heavily impact the battery: Normal, Sleep Mode, Counting Steps, and Tapping Enabled. I measured the power usage of each of these using a <a className="font-semibold text-[#bd5634] underline underline-offset-4 hover:text-[#152b25]" href="https://www.nordicsemi.com/Products/Development-hardware/Power-Profiler-Kit-2" target="_blank" rel="noreferrer">Nordic Power Profiler Kit II</a> . Below is an image of the setup and the results.
+          </p>
+          <Figure
+            src="/battery-life/testbench-normal.png"
+            alt="Setup"
+            caption="Fig. 1. Setup."
+          />
+          <Figure
+            src="/battery-life/external-withscreen.png"
+            alt="Current draw on the clock face"
+            caption="Fig. 2. Current draw on the clock face."
+          />
+          <Figure
+            src="/battery-life/externalsleep-withscreen.png"
+            alt="Current draw on the clock face in sleep mode"
+            caption="Fig. 3. Current draw on the clock face in sleep mode."
+          />
+          <Figure
+            src="/battery-life/externalstepcount-withscreen.png"
+            alt="Current draw when counting steps"
+            caption="Fig. 4. Current draw when counting steps."
+          />
+          <Figure
+            src="/battery-life/externalblackjacknotapping-withscreen.png"
+            alt="Current draw on blackjack face without me tapping the board"
+            caption="Fig. 5. Current draw on blackjack face without me tapping the board."
+          />
+          <Figure
+            src="/battery-life/externalblackjackalwaystapping-withscreen.png"
+            alt="Current draw on blackjack face with me tapping the board"
+            caption="Fig. 6. Current draw on blackjack face with me tapping the board."
+          />
+          <p>
+            From there, we can find the power draw based on the battery’s capacity. From the battery’s curves, we see that the battery dies near 2.2V and I tested the watch works fine at 2V, so we can assume we can use the total 90mAh of the CR2016 without any voltage cut-off issues.
+          </p>
+          <Figure
+            src="/battery-life/cr2016-specs.png"
+            alt="Battery specs"
+            caption="Fig. 7. Battery specs."
+          />
+          <Figure
+            src="/battery-life/cr2016-discharge.png"
+            alt="Battery curve."
+            caption="Fig. 8. Battery curve."
+          />
+
+
+
+          <p>
+            Estimating that an average user is awake for 16 hours a day, never uses the sleep mode, is moving around 40% of their day, and plays a tapping game for 2 minutes daily, we get that the battery life should be about <strong>1 year and 3 months</strong> (466 days).
           </p>
 
-          <h2 className="pt-3 text-2xl font-black tracking-tight text-[#152b25]">What changes the estimate?</h2>
           <p>
-            Features that are active more often can increase power use. In particular, using the step counter will reduce battery life compared with the typical-use estimate.
-          </p>
-
-          <div className="aspect-video overflow-hidden rounded-2xl bg-[#152b25]">
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/9atKHnqb4is"
-              title="Battery life video"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-
-          <figure className="overflow-hidden rounded-2xl bg-[#e9e5d9]">
-            <Image
-              className="aspect-[4/3] w-full object-cover"
-              src="/step-count-on-clock.png"
-              alt="Jolt watch worn on a wrist"
-              width={640}
-              height={480}
-            />
-            <figcaption className="px-4 py-3 text-center text-sm text-[#69776e]">
-              Jolt on wrist · placeholder photo
-            </figcaption>
-          </figure>
-
-          <p>
-            I expect at least one year of battery life under normal use, with the exact result depending on usage. The roughly two-year figure is a calculation based on typical current draw, not a promise or a result from a long-term battery test.
+            Estimating for a user who has the watch in sleep mode 90% of the time, and never uses the step counter nor tapping games, that would be <strong>3 years</strong> (1115 days).
           </p>
         </div>
 
