@@ -6,8 +6,8 @@ import { useRef, useState } from 'react'
 const galleryImages = [
   { src: '/gallery/gal7.png', alt: 'Customer photo of a Jolt watch' },
   { src: '/contrast/fig07.png', alt: 'Customer photo of a Jolt watch' },
-  { src: '/gallery/gal4.png', alt: 'Customer photo of a Jolt watch' },
   { src: '/gallery/gal1.png', alt: 'Customer photo of a Jolt watch' },
+  { src: '/gallery/gal4.png', alt: 'Customer photo of a Jolt watch' },
   { src: '/gallery/gal5.png', alt: 'Customer photo of a Jolt watch' },
   { src: '/gallery/gal6.png', alt: 'Customer photo of a Jolt watch' },
 ]
