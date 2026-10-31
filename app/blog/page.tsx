@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Jolt Blog',
-  description: 'Notes, experiments, and updates from the Jolt Sensor Watch project.',
+  description: 'Notes, experiments, and updates from the Jolt project.',
 }
 
 export default function BlogPage() {

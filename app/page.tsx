@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Countdown from './countdown'
 
 export const metadata: Metadata = {
-  title: 'Jolt — Sensor Watch PCB',
+  title: 'Jolt - Custom PCB for G-Shock',
   description: 'Meet Jolt: a custom board that brings new life to the classic G-Shock DW-5600.',
 }
 
@@ -91,10 +91,11 @@ const useCases = [
 
 const galleryImages = [
   { src: '/gallery/gal1.png' },
-  { src: '/gallery/gal4.png' },
+  { src: '/gallery/gal7.png' },
   { src: '/contrast/fig07.png' },
-  { src: '/gallery/gal6.png' },
+  { src: '/gallery/gal4.png' },
   { src: '/gallery/gal5.png' },
+  { src: '/gallery/gal6.png' },
 ]
 
 const faqs = [
@@ -363,7 +364,7 @@ export default function Home() {
               Share your Jolt photo
             </a>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-3 md:grid-cols-5 md:gap-5">
+          <div className="mt-8 grid grid-cols-3 gap-3 md:grid-cols-3 md:gap-5">
             {galleryImages.map((image) => (
               <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
                 <Image
@@ -406,7 +407,7 @@ export default function Home() {
       </section>
 
       <footer className="bg-[#152b25] px-5 py-7 text-center text-sm text-white/60">
-        Disclaimer: This webpage’s template was vibe-coded, but not much else in this project was. The circuit board and firmware were made, reviewed, and tested manually.
+        Disclaimer: This webpage’s template was vibe-coded. Not much else in this project was. The circuit board and firmware were made, reviewed, and tested manually.
       </footer>
     </main>
   )

@@ -1,4 +1,4 @@
-# Sensor Watch display playground
+# Jolt display playground
 
 ## Try it!
 
@@ -6,7 +6,7 @@ https://voloved.github.io/sensor-watch-playground/
 
 ## What is this?
 
-This web app replicates the LCD display of the Casio G-Shock DW5600 watch. Its goal is to help with developing new features on the Sensor Watch Jolt, a programmable, ARM-based microcontroller board that replaces the watch's original board.
+This web app replicates the LCD display of the Casio G-Shock DW5600 watch. Its goal is to help with developing new features on the Jolt, a programmable, ARM-based microcontroller board that replaces the watch's original board.
 
 The display primarily consists of 7-segment digits, but there are a lot of exceptions, such as digits where multiple segments are tied together. These quirks create various limitations on the characters that can be displayed in each position.
 
