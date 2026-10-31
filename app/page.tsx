@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Countdown from './countdown'
+import GalleryCarousel from './gallery-carousel'
 
 export const metadata: Metadata = {
   title: 'Jolt - Custom PCB for G-Shock',
@@ -43,6 +44,7 @@ const resourceGroups = [
       ['Firmware source', 'https://github.com/voloved/second-movement/tree/jolt'],
       ['Installation guide', 'https://youtu.be/S6SnwOAQ9PI?si=zYGschGaip3tW__y'],
       ['Tindie product page', 'https://www.tindie.com/products/devolov/jolt-a-custom-pcb-to-make-g-shock-hackable-2/'],
+      ['Hackaday Post', 'https://hackaday.com/2026/06/23/a-custom-pcb-for-the-casio-g-shock/'],
       ['Project Discord', 'https://discord.gg/m3gYtCge4x'],
       ['Jolt firmware releases', 'https://github.com/voloved/second-movement/releases'],
     ],
@@ -87,15 +89,6 @@ const useCases = [
     title: 'See your current step count without ever leaving the main clock face.',
     description: 'We can display the steps instead of the current date on the main face with the press of a button. The top-right shows I walked 3.1K steps today.',
   }
-]
-
-const galleryImages = [
-  { src: '/gallery/gal1.png' },
-  { src: '/gallery/gal7.png' },
-  { src: '/contrast/fig07.png' },
-  { src: '/gallery/gal4.png' },
-  { src: '/gallery/gal5.png' },
-  { src: '/gallery/gal6.png' },
 ]
 
 const faqs = [
@@ -364,19 +357,7 @@ export default function Home() {
               Share your Jolt photo
             </a>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-3 md:grid-cols-3 md:gap-5">
-            {galleryImages.map((image) => (
-              <figure key={image.src} className="overflow-hidden rounded-2xl bg-white/70">
-                <Image
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
-                  src={image.src}
-                  alt="Customer Photo"
-                  width={480}
-                  height={500}
-                />
-              </figure>
-            ))}
-          </div>
+          <GalleryCarousel />
         </div>
       </section>
 
