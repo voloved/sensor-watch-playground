@@ -103,6 +103,41 @@ export default function BatteryLifePost() {
             alt="Current draw on blackjack face with me tapping the board"
             caption="Fig. 6. Current draw on blackjack face with me tapping the board."
           />
+          <div className="mt-5 overflow-x-auto">
+            <table className="w-full border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-[#152b25]/20">
+                  <th scope="col" className="px-3 py-3 font-extrabold">Function</th>
+                  <th scope="col" className="px-3 py-3 font-extrabold">Current Draw (μA)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">Clock face</td>
+                  <td className="px-3 py-3">6.36</td>
+                </tr>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">Clock face in sleep mode</td>
+                  <td className="px-3 py-3">3.03</td>
+                </tr>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">Counting steps</td>
+                  <td className="px-3 py-3">12.63</td>
+                </tr>
+                <tr className="border-b border-[#152b25]/10">
+                  <td className="px-3 py-3">Blackjack face, tapping enabled, but not tapping the board</td>
+                  <td className="px-3 py-3">19.25</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-3">Blackjack face, tapping the board continuously</td>
+                  <td className="px-3 py-3">29.35</td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption className="px-4 py-3 text-center text-sm leading-6 text-[#69776e]">
+              Table taken from the screenshots showing the average power draw.
+            </figcaption>
+          </div>
           <p>
             From there, we can find the power draw based on the battery’s capacity. From the battery’s curves, we see that the battery dies near 2.2V and I tested the watch works fine at 2V, so we can assume we can use the total 90mAh of the CR2016 without any voltage cut-off issues.
           </p>
@@ -124,7 +159,7 @@ export default function BatteryLifePost() {
           </p>
 
           <p>
-            Estimating for a user who has the watch in sleep mode 90% of the time, and never uses the step counter nor tapping games, that would be <strong>3 years</strong> (1115 days).
+            Estimating for a user who has the watch in sleep mode 90% of the time, and never uses the step counter nor tapping games, that would be <strong>3 years</strong> (1,115 days).
           </p>
         </div>
 
